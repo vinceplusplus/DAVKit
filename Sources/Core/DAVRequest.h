@@ -19,12 +19,14 @@ extern NSString *const DAVClientErrorDomain;
 	NSMutableData *_data;
 	BOOL _done;
 	BOOL _executing;
+    NSIndexSet* _expectedStatuses;
     id <DAVRequestDelegate> _delegate;
 }
 
 - (id)initWithPath:(NSString *)aPath session:(DAVSession *)session delegate:(id <DAVRequestDelegate>)delegate;
 
 @property(readonly) NSString *path;
+@property(nonatomic, strong) NSIndexSet* expectedStatuses;
 @property(nonatomic, assign, readonly) id <DAVRequestDelegate> delegate;
 
 - (NSURL *)concatenatedURLWithPath:(NSString *)aPath;

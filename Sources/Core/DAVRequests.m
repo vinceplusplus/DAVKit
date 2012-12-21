@@ -47,6 +47,16 @@
 
 @implementation DAVDeleteRequest
 
+- (id)initWithPath:(NSString *)aPath session:(DAVSession *)session delegate:(id<DAVRequestDelegate>)delegate
+{
+    if ((self = [super initWithPath:aPath session:session delegate:delegate]) != nil)
+    {
+        self.expectedStatuses = [NSIndexSet indexSetWithIndex:204];
+    }
+
+    return self;
+}
+
 - (NSURLRequest *)request {
 	return [[self newRequestWithPath:self.path method:@"DELETE"] autorelease];
 }
@@ -122,6 +132,16 @@
 
 @implementation DAVMakeCollectionRequest
 
+- (id)initWithPath:(NSString *)aPath session:(DAVSession *)session delegate:(id<DAVRequestDelegate>)delegate
+{
+    if ((self = [super initWithPath:aPath session:session delegate:delegate]) != nil)
+    {
+        self.expectedStatuses = [NSIndexSet indexSetWithIndex:204];
+    }
+
+    return self;
+}
+
 - (NSURLRequest *)request {
 	return [[self newRequestWithPath:self.path method:@"MKCOL"] autorelease];
 }
@@ -145,6 +165,12 @@
     if (self = [super initWithSession:session])
     {
         _MIMEType = @"application/octet-stream";
+        NSMutableIndexSet* indexes = [[NSMutableIndexSet alloc] init];
+        [indexes addIndex:201]; // The resource was created successfully
+        [indexes addIndex:202]; // The resource will be created or deleted, but this has not happened yet
+        [indexes addIndex:204]; // The server has fulfilled the request but does not need to return an entity body, and might return updated metadata.
+        self.expectedStatuses = indexes;
+        [indexes release];
     }
     return self;
 }

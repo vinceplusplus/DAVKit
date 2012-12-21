@@ -19,6 +19,7 @@
 
 @implementation DAVRequest
 
+
 NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 
 #define DEFAULT_TIMEOUT 60
@@ -35,6 +36,7 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 	return self;
 }
 
+@synthesize expectedStatuses = _expectedStatuses;
 @synthesize path = _path;
 @synthesize delegate = _delegate;
 
@@ -135,7 +137,7 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
     // Report to transcript
     [[self session] appendFormatToReceivedTranscript:@"%i %@", code, [[resp class] localizedStringForStatusCode:code]];
 	
-	if (code >= 400) {
+	if ((code >= 400) || (self.expectedStatuses && ![self.expectedStatuses containsIndex:code])) {
 		[_connection cancel];
 		
         // TODO: Formalize inclusion of response
@@ -219,19 +221,20 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	if ([_delegate respondsToSelector:@selector(request:didSucceedWithResult:)]) {
-		id result = [self resultForData:_data];
-		
-		[_delegate request:self didSucceedWithResult:[[result retain] autorelease]];
-	}
-	
-	[self _didFinish];
+    if ([_delegate respondsToSelector:@selector(request:didSucceedWithResult:)]) {
+        id result = [self resultForData:_data];
+
+        [_delegate request:self didSucceedWithResult:[[result retain] autorelease]];
+    }
+    
+    [self _didFinish];
 }
 
 - (void)dealloc {
 	[_path release];
 	[_connection release];
 	[_data release];
+    [_expectedStatuses release];
 	
 	[super dealloc];
 }
