@@ -182,7 +182,7 @@
 @synthesize stream = _pstream;
 
 - (NSURLRequest *)request {
-	NSParameterAssert(_pdata != nil);
+	NSParameterAssert((_pdata != nil) || (_pstream != nil));
 	
 	NSString *len = [NSString stringWithFormat:@"%ld", (unsigned long)[_pdata length]];
 	
