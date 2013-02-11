@@ -179,6 +179,7 @@
 
 @synthesize data = _pdata;
 @synthesize dataMIMEType = _MIMEType;
+@synthesize stream = _pstream;
 
 - (NSURLRequest *)request {
 	NSParameterAssert(_pdata != nil);
@@ -188,8 +189,16 @@
 	NSMutableURLRequest *req = [self newRequestWithPath:self.path method:@"PUT"];
 	[req setValue:[self dataMIMEType] forHTTPHeaderField:@"Content-Type"];
 	[req setValue:len forHTTPHeaderField:@"Content-Length"];
-    [req setHTTPBody:_pdata];
-	
+
+    if (_pdata)
+    {
+        [req setHTTPBody:_pdata];
+    }
+    else if (_pstream)
+    {
+        [req setHTTPBodyStream:_pstream];
+    }
+
 	return [req autorelease];
 }
 
@@ -197,7 +206,8 @@
 {
 	[_pdata release];
     [_MIMEType release];
-    
+    [_pstream release];
+
 	[super dealloc];
 }
 
