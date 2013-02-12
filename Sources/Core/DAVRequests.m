@@ -157,14 +157,50 @@
 
 @end
 
-
 @implementation DAVPutRequest
 
-- (id)initWithSession:(DAVSession *)session;
++ (NSString*)MIMETypeForExtension:(NSString*)extension
 {
-    if (self = [super initWithSession:session])
+    CFStringRef type = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)extension, NULL);
+    NSString* mimeType = nil;
+    if (type)
     {
-        _MIMEType = @"application/octet-stream";
+        mimeType = (NSString*)UTTypeCopyPreferredTagWithClass(type, kUTTagClassMIMEType);
+        CFRelease(type);
+        [mimeType autorelease];
+        CFMakeCollectable(mimeType);
+    }
+    if (!mimeType)
+    {
+        mimeType = @"application/octet-stream";
+    }
+
+    return mimeType;
+}
+
+
+- (id)initWithPath:(NSString*)path originalRequest:(NSURLRequest*)originalRequest session:(DAVSession *)session delegate:(id<DAVRequestDelegate>)delegate
+{
+    if ((self = [super initWithPath:path session:session delegate:delegate]))
+    {
+
+        _request = [originalRequest mutableCopy];
+
+        if(![_request valueForHTTPHeaderField:@"Content-Length"])
+        {
+            NSData* data = [_request HTTPBody];
+            NSAssert(data != nil, @"should have data if no length set");
+            NSUInteger length = [data length];
+            [_request setValue:[NSString stringWithFormat:@"%ld", length] forHTTPHeaderField:@"Content-Length"];
+        }
+
+        NSString* MIMEType = [DAVPutRequest MIMETypeForExtension:[path pathExtension]];
+        [_request setValue:MIMEType forHTTPHeaderField:@"Content-Type"];
+        
+        [_request setHTTPMethod:@"PUT"];
+        [_request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+        [_request setURL:[self concatenatedURLWithPath:path]];
+
         NSMutableIndexSet* indexes = [[NSMutableIndexSet alloc] init];
         [indexes addIndex:201]; // The resource was created successfully
         [indexes addIndex:202]; // The resource will be created or deleted, but this has not happened yet
@@ -172,40 +208,24 @@
         self.expectedStatuses = indexes;
         [indexes release];
     }
+
     return self;
 }
 
 @dynamic delegate;
 
-@synthesize data = _pdata;
-@synthesize dataMIMEType = _MIMEType;
-@synthesize stream = _pstream;
-
 - (NSURLRequest *)request {
-	NSParameterAssert((_pdata != nil) || (_pstream != nil));
-	
-	NSMutableURLRequest *req = [self newRequestWithPath:self.path method:@"PUT"];
-	[req setValue:[self dataMIMEType] forHTTPHeaderField:@"Content-Type"];
+    return _request;
+}
 
-    if (_pdata)
-    {
-        NSString *len = [NSString stringWithFormat:@"%ld", (unsigned long)[_pdata length]];
-        [req setValue:len forHTTPHeaderField:@"Content-Length"];
-        [req setHTTPBody:_pdata];
-    }
-    else if (_pstream)
-    {
-        [req setHTTPBodyStream:_pstream];
-    }
-
-	return [req autorelease];
+- (NSUInteger)expectedLength
+{
+    return [[_request valueForHTTPHeaderField:@"Content-Length"] integerValue];
 }
 
 - (void)dealloc
 {
-	[_pdata release];
-    [_MIMEType release];
-    [_pstream release];
+	[_request release];
 
 	[super dealloc];
 }

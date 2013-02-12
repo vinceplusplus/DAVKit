@@ -51,16 +51,15 @@
 
 @interface DAVPutRequest : DAVRequest {
   @private
-	NSData          *_pdata;
-    NSInputStream   *_pstream;
-    NSString        *_MIMEType;
+    NSMutableURLRequest* _request;
 }
 
-@property(nonatomic, assign, readonly) id <DAVPutRequestDelegate> delegate;
++ (NSString*)MIMETypeForExtension:(NSString*)extension;
 
-// Pass - [NSData dataWithContentsOfFile:] to upload a local file
-@property (retain) NSData *data;
-@property(nonatomic, copy) NSString *dataMIMEType;  // defaults to application/octet-stream
-@property (retain) NSInputStream *stream;
+- (id)initWithPath:(NSString*)path originalRequest:(NSURLRequest*)request session:(DAVSession *)session delegate:(id <DAVRequestDelegate>)delegate;
+
+- (NSUInteger)expectedLength;
+
+@property(nonatomic, assign, readonly) id <DAVPutRequestDelegate> delegate;
 
 @end
