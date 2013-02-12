@@ -184,14 +184,13 @@
 - (NSURLRequest *)request {
 	NSParameterAssert((_pdata != nil) || (_pstream != nil));
 	
-	NSString *len = [NSString stringWithFormat:@"%ld", (unsigned long)[_pdata length]];
-	
 	NSMutableURLRequest *req = [self newRequestWithPath:self.path method:@"PUT"];
 	[req setValue:[self dataMIMEType] forHTTPHeaderField:@"Content-Type"];
-	[req setValue:len forHTTPHeaderField:@"Content-Length"];
 
     if (_pdata)
     {
+        NSString *len = [NSString stringWithFormat:@"%ld", (unsigned long)[_pdata length]];
+        [req setValue:len forHTTPHeaderField:@"Content-Length"];
         [req setHTTPBody:_pdata];
     }
     else if (_pstream)
