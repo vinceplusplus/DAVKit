@@ -218,4 +218,16 @@
     }
 }
 
+- (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request
+{
+    NSInputStream* result = nil;
+
+    if ([[self delegate] respondsToSelector:@selector(webDAVRequest:needNewBodyStream:)])
+    {
+        result = [[self delegate] webDAVRequest:self needNewBodyStream:request];
+    }
+
+    return result;
+}
+
 @end

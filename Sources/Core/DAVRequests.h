@@ -46,6 +46,7 @@
 @protocol DAVPutRequestDelegate <DAVRequestDelegate>
 @optional
 - (void)webDAVRequest:(DAVRequest *)request didSendDataOfLength:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+- (NSInputStream *)webDAVRequest:(DAVRequest *)request needNewBodyStream:(NSURLRequest *)request;
 @end
 
 @interface DAVPutRequest : DAVRequest {
