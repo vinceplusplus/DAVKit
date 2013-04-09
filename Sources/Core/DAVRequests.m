@@ -196,7 +196,8 @@
 
         NSString* MIMEType = [DAVPutRequest MIMETypeForExtension:[path pathExtension]];
         [_request setValue:MIMEType forHTTPHeaderField:@"Content-Type"];
-        
+        [_request setValue:@"100-Continue" forHTTPHeaderField:@"Expect"];
+
         [_request setHTTPMethod:@"PUT"];
         [_request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
         [_request setURL:[self concatenatedURLWithPath:path]];
