@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221F8B9A17259BFF004E7B9D /* AMkColTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* AMkColTest.m */; };
+		221F8B9B17259BFF004E7B9D /* BPutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B4121D98D600DD1DFF /* BPutTest.m */; };
+		221F8B9C17259BFF004E7B9D /* CGetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B6121D98D600DD1DFF /* CGetTest.m */; };
+		221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
+		221F8B9E17259BFF004E7B9D /* DCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BA121D98D600DD1DFF /* DCopyTest.m */; };
+		221F8B9F17259BFF004E7B9D /* EMoveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BC121D98D600DD1DFF /* EMoveTest.m */; };
+		221F8BA017259BFF004E7B9D /* FListTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BE121D98D600DD1DFF /* FListTest.m */; };
+		221F8BA117259BFF004E7B9D /* GDeleteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5C0121D98D600DD1DFF /* GDeleteTest.m */; };
+		221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */; };
+		221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
+		221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F8BB217259F16004E7B9D /* SenTestingKit.framework */; };
+		221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */; };
 		5FEEF26316CE830C002C1CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		5FEEF26F16CE840F002C1CBF /* DAVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED591121D989900DD1DFF /* DAVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEEF27016CE8426002C1CBF /* NSDateRFC1123.h in Headers */ = {isa = PBXBuildFile; fileRef = F94970EB132A093600713958 /* NSDateRFC1123.h */; };
@@ -62,6 +74,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		221F8BAA17259C70004E7B9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FEEF25F16CE830C002C1CBF;
+			remoteInfo = "DAVKit-iOS";
+		};
 		C9FF77F2121C6F58001250C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -72,6 +91,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		221F8BB217259F16004E7B9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
 		32DBCF5E0370ADEE00C91783 /* DAVKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVKit_Prefix.pch; sourceTree = "<group>"; };
 		5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libDAVKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEEF26216CE830C002C1CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +141,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		221F8BA217259BFF004E7B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */,
+				221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */,
+				221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */,
+				221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FEEF25D16CE830C002C1CBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +187,7 @@
 				8DC2EF5B0486A6940098B216 /* DAVKit.framework */,
 				C9FF77EC121C6F51001250C7 /* Tests.octest */,
 				5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */,
+				221F8BA817259BFF004E7B9D /* Tests iOS.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,9 +237,10 @@
 		5FEEF26116CE830C002C1CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				221F8BB217259F16004E7B9D /* SenTestingKit.framework */,
+				5FEEF26216CE830C002C1CBF /* Foundation.framework */,
 				5FEEF28816CE869C002C1CBF /* iOS */,
 				5FEEF28716CE8696002C1CBF /* OSX */,
-				5FEEF26216CE830C002C1CBF /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,6 +374,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		221F8B9517259BFF004E7B9D /* Tests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests-iOS" */;
+			buildPhases = (
+				221F8B9817259BFF004E7B9D /* Resources */,
+				221F8B9917259BFF004E7B9D /* Sources */,
+				221F8BA217259BFF004E7B9D /* Frameworks */,
+				221F8BA417259BFF004E7B9D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				221F8BAB17259C70004E7B9D /* PBXTargetDependency */,
+			);
+			name = "Tests-iOS";
+			productName = Tests;
+			productReference = 221F8BA817259BFF004E7B9D /* Tests iOS.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FEEF26D16CE830C002C1CBF /* Build configuration list for PBXNativeTarget "DAVKit-iOS" */;
@@ -419,13 +472,21 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* DAVKit */,
-				5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */,
 				C9FF77EB121C6F51001250C7 /* Tests */,
+				5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */,
+				221F8B9517259BFF004E7B9D /* Tests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		221F8B9817259BFF004E7B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF520486A6940098B216 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,6 +504,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		221F8BA417259BFF004E7B9D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		C9FF77EA121C6F51001250C7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +533,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		221F8B9917259BFF004E7B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221F8B9A17259BFF004E7B9D /* AMkColTest.m in Sources */,
+				221F8B9B17259BFF004E7B9D /* BPutTest.m in Sources */,
+				221F8B9C17259BFF004E7B9D /* CGetTest.m in Sources */,
+				221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */,
+				221F8B9E17259BFF004E7B9D /* DCopyTest.m in Sources */,
+				221F8B9F17259BFF004E7B9D /* EMoveTest.m in Sources */,
+				221F8BA017259BFF004E7B9D /* FListTest.m in Sources */,
+				221F8BA117259BFF004E7B9D /* GDeleteTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FEEF25C16CE830C002C1CBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +598,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		221F8BAB17259C70004E7B9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */;
+			targetProxy = 221F8BAA17259C70004E7B9D /* PBXContainerItemProxy */;
+		};
 		C9FF77F3121C6F58001250C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* DAVKit */;
@@ -580,6 +674,52 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		221F8BA617259BFF004E7B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SDKROOT)/Developer/Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DAVKit_Prefix.pch;
+				INFOPLIST_FILE = "Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "Tests iOS";
+				SDKROOT = iphoneos6.1;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		221F8BA717259BFF004E7B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SDKROOT)/Developer/Library/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DAVKit_Prefix.pch;
+				INFOPLIST_FILE = "Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "Tests iOS";
+				SDKROOT = iphoneos6.1;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -711,6 +851,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221F8BA617259BFF004E7B9D /* Debug */,
+				221F8BA717259BFF004E7B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
