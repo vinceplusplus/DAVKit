@@ -23,5 +23,6 @@
 - (void)notifyDone;
 - (void)queueAndWaitForRequest:(DAVRequest*)request;
 - (void)waitUntilWeAreDone;
-
+- (id)requestOfClass:(Class)class withPath:(NSString *)path;
+- (NSString*)fullPathForPath:(NSString*)path;
 @end

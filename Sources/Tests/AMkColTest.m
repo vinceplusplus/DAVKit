@@ -11,9 +11,8 @@
 
 - (void)testRequest {
 
-    DAVMakeCollectionRequest *req = [[DAVMakeCollectionRequest alloc] initWithPath:@"davkittest" session:self.session delegate:self];
+    DAVMakeCollectionRequest *req = [self requestOfClass:[DAVMakeCollectionRequest class] withPath:@"davkittest"];
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

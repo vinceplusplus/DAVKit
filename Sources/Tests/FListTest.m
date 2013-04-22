@@ -10,9 +10,8 @@
 @implementation FListTest
 
 - (void)testRequest {
-	DAVListingRequest *req = [[DAVListingRequest alloc] initWithPath:@"davkittest" session:self.session delegate:self];
+    DAVListingRequest *req = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

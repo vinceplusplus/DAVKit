@@ -47,12 +47,29 @@
 	}
 }
 
+- (NSString*)fullPathForPath:(NSString*)path
+{
+    NSString* result = [self.url.path stringByAppendingPathComponent:path];
+
+    return result;
+}
+
+- (id)requestOfClass:(Class)class withPath:(NSString *)path
+{
+    NSString* fullPath = [self fullPathForPath:path];
+    id request = [[class alloc] initWithPath:fullPath session:self.session delegate:self];
+
+    return [request autorelease];
+}
+
 - (void)queueAndWaitForRequest:(DAVRequest*)request
 {
 	STAssertNotNil(request, @"Couldn't create the request");
 
     [self.queue addOperation:request];
     [self waitUntilWeAreDone];
+
+    
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result
@@ -67,6 +84,8 @@
 }
 
 - (void)tearDown {
+    [_queue waitUntilAllOperationsAreFinished];
+    [_queue release];
 	[_session release];
 	_session = nil;
 }

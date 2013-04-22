@@ -10,11 +10,10 @@
 @implementation DCopyTest
 
 - (void)testRequest {
-	DAVCopyRequest *req = [[DAVCopyRequest alloc] initWithPath:@"davkittest/filetest22.txt" session:self.session delegate:self];
+    DAVCopyRequest *req = [self requestOfClass:[DAVCopyRequest class] withPath:@"davkittest/filetest22.txt"];
 	req.destinationPath = @"davkittest/filetest23.txt";
 	req.overwrite = YES;
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

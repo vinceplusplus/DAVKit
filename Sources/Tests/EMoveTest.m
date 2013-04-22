@@ -10,10 +10,9 @@
 @implementation EMoveTest
 
 - (void)testRequest {
-	DAVMoveRequest *req = [[DAVMoveRequest alloc] initWithPath:@"davkittest/filetest23.txt" session:self.session delegate:self];
-	req.destinationPath = @"davkittest/filetest24.txt";
+    DAVMoveRequest *req = [self requestOfClass:[DAVMoveRequest class] withPath:@"davkittest/filetest23.txt"];
+	req.destinationPath = [self fullPathForPath:@"davkittest/filetest24.txt"];
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

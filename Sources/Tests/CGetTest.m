@@ -10,9 +10,8 @@
 @implementation CGetTest
 
 - (void)testRequest {
-	DAVGetRequest *req = [[DAVGetRequest alloc] initWithPath:@"davkittest/filetest22.txt" session:self.session delegate:self];
+    DAVGetRequest *req = [self requestOfClass:[DAVGetRequest class] withPath:@"davkittest/filetest22.txt"];
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

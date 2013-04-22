@@ -10,9 +10,8 @@
 @implementation GDeleteTest
 
 - (void)testRequest {
-	DAVDeleteRequest *req = [[DAVDeleteRequest alloc] initWithPath:@"davkittest" session:self.session delegate:self];
+    DAVDeleteRequest *req = [self requestOfClass:[DAVDeleteRequest class] withPath:@"davkittest"];
     [self queueAndWaitForRequest:req];
-	[req release];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

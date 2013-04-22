@@ -14,7 +14,8 @@
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:self.url];
     request.HTTPBody = [NSData dataWithBytes:bytes length:strlen(bytes)];
-	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:@"davkittest/filetest22.txt" originalRequest:request session:self.session delegate:self];
+    NSString* fullPath = [self fullPathForPath:@"davkittest/filetest22.txt"];
+	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:fullPath originalRequest:request session:self.session delegate:self];
     [self queueAndWaitForRequest:req];
 	[req release];
 }
