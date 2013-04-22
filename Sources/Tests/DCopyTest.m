@@ -10,14 +10,13 @@
 @implementation DCopyTest
 
 - (void)testRequest {
-	DAVCopyRequest *req = [[DAVCopyRequest alloc] initWithPath:@"davkittest/filetest22.txt"];
+	DAVCopyRequest *req = [[DAVCopyRequest alloc] initWithPath:@"davkittest/filetest22.txt" session:self.session delegate:self];
 	req.destinationPath = @"davkittest/filetest23.txt";
 	req.overwrite = YES;
-	req.delegate = self;
-	
+
 	STAssertNotNil(req, @"Couldn't create the request");
 	
-	[self.session enqueueRequest:req];
+	[self.queue addOperation:req];
 	[req release];
 	
 	[self waitUntilWeAreDone];

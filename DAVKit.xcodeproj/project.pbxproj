@@ -81,7 +81,6 @@
 		8DC2EF5B0486A6940098B216 /* DAVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DAVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9181BBA121DC31D0022E4AC /* DAVResponseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVResponseItem.h; path = Sources/Core/DAVResponseItem.h; sourceTree = "<group>"; };
 		C9181BBB121DC31D0022E4AC /* DAVResponseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVResponseItem.m; path = Sources/Core/DAVResponseItem.m; sourceTree = "<group>"; };
-		C939F7D313C67F6100925808 /* DAVTestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVTestSettings.h; path = Sources/Tests/DAVTestSettings.h; sourceTree = "<group>"; };
 		C9A4E37C1406E12C004E4AEB /* DAVRequestGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequestGroup.h; path = Sources/Core/DAVRequestGroup.h; sourceTree = "<group>"; };
 		C9A4E37D1406E12C004E4AEB /* DAVRequestGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVRequestGroup.m; path = Sources/Core/DAVRequestGroup.m; sourceTree = "<group>"; };
 		C9A4E39E1406E9CF004E4AEB /* DAVBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVBaseRequest.h; path = Sources/Core/DAVBaseRequest.h; sourceTree = "<group>"; };
@@ -270,7 +269,6 @@
 		C9FF77A2121C6C1A001250C7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C939F7D313C67F6100925808 /* DAVTestSettings.h */,
 				C9FED5B1121D98D600DD1DFF /* AMkColTest.h */,
 				C9FED5B2121D98D600DD1DFF /* AMkColTest.m */,
 				C9FED5B3121D98D600DD1DFF /* BPutTest.h */,
@@ -421,8 +419,8 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* DAVKit */,
-				C9FF77EB121C6F51001250C7 /* Tests */,
 				5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */,
+				C9FF77EB121C6F51001250C7 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -646,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -672,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

@@ -10,13 +10,12 @@
 @implementation EMoveTest
 
 - (void)testRequest {
-	DAVMoveRequest *req = [[DAVMoveRequest alloc] initWithPath:@"davkittest/filetest23.txt"];
+	DAVMoveRequest *req = [[DAVMoveRequest alloc] initWithPath:@"davkittest/filetest23.txt" session:self.session delegate:self];
 	req.destinationPath = @"davkittest/filetest24.txt";
-	req.delegate = self;
-	
+
 	STAssertNotNil(req, @"Couldn't create the request");
 	
-	[self.session enqueueRequest:req];
+	[self.queue addOperation:req];
 	[req release];
 	
 	[self waitUntilWeAreDone];

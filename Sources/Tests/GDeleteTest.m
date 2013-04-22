@@ -10,12 +10,11 @@
 @implementation GDeleteTest
 
 - (void)testRequest {
-	DAVDeleteRequest *req = [[DAVDeleteRequest alloc] initWithPath:@"davkittest"];
-	req.delegate = self;
-	
+	DAVDeleteRequest *req = [[DAVDeleteRequest alloc] initWithPath:@"davkittest" session:self.session delegate:self];
+
 	STAssertNotNil(req, @"Couldn't create the request");
 	
-	[self.session enqueueRequest:req];
+	[self.queue addOperation:req];
 	[req release];
 	
 	[self waitUntilWeAreDone];

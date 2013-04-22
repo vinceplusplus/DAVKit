@@ -10,14 +10,13 @@
 @implementation CGetTest
 
 - (void)testRequest {
-	DAVGetRequest *req = [[DAVGetRequest alloc] initWithPath:@"davkittest/filetest22.txt"];
-	req.delegate = self;
-	
+	DAVGetRequest *req = [[DAVGetRequest alloc] initWithPath:@"davkittest/filetest22.txt" session:self.session delegate:self];
+
 	STAssertNotNil(req, @"Couldn't create the request");
-	
-	[self.session enqueueRequest:req];
+
+    [self.queue addOperation:req];
 	[req release];
-	
+
 	[self waitUntilWeAreDone];
 }
 

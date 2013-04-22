@@ -8,15 +8,17 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <DAVKit/DAVKit.h>
 
-#import "DAVTestSettings.h"
-
-@interface DAVTest : SenTestCase < DAVRequestDelegate > {
+@interface DAVTest : SenTestCase < DAVRequestDelegate, DAVSessionDelegate > {
   @private
 	DAVSession *_session;
+    NSURL *_url;
+    NSOperationQueue *_queue;
 	BOOL _done;
 }
 
 @property (readonly) DAVSession *session;
+@property (readonly) NSURL *url;
+@property (readonly) NSOperationQueue* queue;
 
 - (void)notifyDone;
 - (void)waitUntilWeAreDone;

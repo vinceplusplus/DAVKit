@@ -11,16 +11,15 @@
 
 - (void)testRequest {
 	const char *bytes = "blah\0";
-	
-	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:@"davkittest/filetest22.txt"];
-	req.data = [NSData dataWithBytes:bytes length:strlen(bytes)];
-	req.delegate = self;
-	
+
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:self.url];
+    request.HTTPBody = [NSData dataWithBytes:bytes length:strlen(bytes)];
+	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:@"davkittest/filetest22.txt" originalRequest:request session:self.session delegate:self];
 	STAssertNotNil(req, @"Couldn't create the request");
-	
-	[self.session enqueueRequest:req];
+
+    [self.queue addOperation:req];
 	[req release];
-	
+
 	[self waitUntilWeAreDone];
 }
 
