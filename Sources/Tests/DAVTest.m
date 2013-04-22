@@ -47,8 +47,17 @@
 	}
 }
 
+- (void)queueAndWaitForRequest:(DAVRequest*)request
+{
+	STAssertNotNil(request, @"Couldn't create the request");
+
+    [self.queue addOperation:request];
+    [self waitUntilWeAreDone];
+}
+
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result
 {
+    [self notifyDone]; // test class should override this, but just in case...
 }
 
 - (void)request:(DAVRequest *)aRequest didFailWithError:(NSError *)error {

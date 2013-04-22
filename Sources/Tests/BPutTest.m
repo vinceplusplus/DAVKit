@@ -15,12 +15,8 @@
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:self.url];
     request.HTTPBody = [NSData dataWithBytes:bytes length:strlen(bytes)];
 	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:@"davkittest/filetest22.txt" originalRequest:request session:self.session delegate:self];
-	STAssertNotNil(req, @"Couldn't create the request");
-
-    [self.queue addOperation:req];
+    [self queueAndWaitForRequest:req];
 	[req release];
-
-	[self waitUntilWeAreDone];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

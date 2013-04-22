@@ -11,13 +11,8 @@
 
 - (void)testRequest {
 	DAVGetRequest *req = [[DAVGetRequest alloc] initWithPath:@"davkittest/filetest22.txt" session:self.session delegate:self];
-
-	STAssertNotNil(req, @"Couldn't create the request");
-
-    [self.queue addOperation:req];
+    [self queueAndWaitForRequest:req];
 	[req release];
-
-	[self waitUntilWeAreDone];
 }
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {

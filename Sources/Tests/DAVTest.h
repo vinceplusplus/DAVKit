@@ -21,6 +21,7 @@
 @property (readonly) NSOperationQueue* queue;
 
 - (void)notifyDone;
+- (void)queueAndWaitForRequest:(DAVRequest*)request;
 - (void)waitUntilWeAreDone;
 
 @end
