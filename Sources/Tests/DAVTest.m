@@ -51,7 +51,7 @@
 
 - (NSString*)fullPathForPath:(NSString*)path
 {
-    NSString* result = [self.url.path stringByAppendingPathComponent:path];
+    NSString* result = path; // actually it's just the raw path
 
     return result;
 }
