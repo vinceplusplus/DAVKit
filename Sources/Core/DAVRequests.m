@@ -142,7 +142,7 @@
 {
     if ((self = [super initWithPath:aPath session:session delegate:delegate]) != nil)
     {
-        NSMutableIndexSet* expected = [NSMutableIndexSet indexSetWithIndex:200];
+        NSMutableIndexSet* expected = [NSMutableIndexSet indexSetWithIndex:201];
         [expected addIndex:204];
         self.expectedStatuses = expected;
     }
