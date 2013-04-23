@@ -121,7 +121,7 @@
 
     STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
 	STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
-	STAssertTrue([self.result count] == 3, @"Array should contain 3 objects");
+	STAssertEquals([self.result count], 1UL, @"Unexpected result count %lu %@", [self.result count], self.result);
 
     [self removeTestDirectory];
 }
