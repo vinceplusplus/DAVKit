@@ -69,6 +69,9 @@
 	STAssertNotNil(request, @"Couldn't create the request");
 
     _done = NO;
+    self.error = nil;
+    self.result = nil;
+
     [self.queue addOperation:request];
     [self waitUntilWeAreDone];
 
@@ -97,8 +100,8 @@
     [_queue waitUntilAllOperationsAreFinished];
     [_queue release]; _queue = nil;
 	[_session release]; _session = nil;
-    [_result release]; _result = nil;
-    [_error release]; _error = nil;
+    self.result = nil;
+    self.error = nil;
 }
 
 - (void)webDAVSession:(DAVSession *)session didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge

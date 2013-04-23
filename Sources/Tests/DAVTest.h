@@ -21,8 +21,8 @@
 @property (readonly) DAVSession *session;
 @property (readonly) NSURL *url;
 @property (readonly) NSOperationQueue *queue;
-@property (readonly) NSError *error;
-@property (readonly) id result;
+@property (strong, nonatomic) NSError *error;
+@property (strong, nonatomic) id result;
 
 - (void)notifyDone;
 - (void)queueAndWaitForRequest:(DAVRequest*)request;
