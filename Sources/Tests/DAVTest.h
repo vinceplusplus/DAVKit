@@ -13,12 +13,16 @@
 	DAVSession *_session;
     NSURL *_url;
     NSOperationQueue *_queue;
+    NSError *_error;
 	BOOL _done;
+    id _result;
 }
 
 @property (readonly) DAVSession *session;
 @property (readonly) NSURL *url;
-@property (readonly) NSOperationQueue* queue;
+@property (readonly) NSOperationQueue *queue;
+@property (readonly) NSError *error;
+@property (readonly) id result;
 
 - (void)notifyDone;
 - (void)queueAndWaitForRequest:(DAVRequest*)request;

@@ -16,6 +16,8 @@
 @synthesize session = _session;
 @synthesize url = _url;
 @synthesize queue = _queue;
+@synthesize error = _error;
+@synthesize result = _result;
 
 - (void)setUp {
 	_done = NO;
@@ -66,6 +68,7 @@
 {
 	STAssertNotNil(request, @"Couldn't create the request");
 
+    _done = NO;
     [self.queue addOperation:request];
     [self waitUntilWeAreDone];
 
@@ -74,12 +77,14 @@
 
 - (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result
 {
-    [self notifyDone]; // test class should override this, but just in case...
+    // store the result - the test case will check it
+    _result = [result retain];
+    [self notifyDone];
 }
 
 - (void)request:(DAVRequest *)aRequest didFailWithError:(NSError *)error {
-	STFail(@"We have an error: %@", error);
-	
+    // store the error - the test case will check it
+    _error = [error retain];
 	[self notifyDone];
 }
 
@@ -90,10 +95,10 @@
 
 - (void)tearDown {
     [_queue waitUntilAllOperationsAreFinished];
-    [_queue release];
-    _queue = nil;
-	[_session release];
-	_session = nil;
+    [_queue release]; _queue = nil;
+	[_session release]; _session = nil;
+    [_result release]; _result = nil;
+    [_error release]; _error = nil;
 }
 
 - (void)webDAVSession:(DAVSession *)session didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
