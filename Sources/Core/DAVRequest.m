@@ -115,10 +115,12 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
     NSString* redirectString;
     if (redirectResponse)
     {
-        NSMutableURLRequest* newRequest = [NSMutableURLRequest requestWithURL:[request URL]];
-        [newRequest setHTTPMethod:connection.originalRequest.HTTPMethod];
+        // NSURLConnection has helpfully stripped out all the useful stuff from the request,
+        // so we make a copy of the original one, and replace just the URL with the redirected one
+        NSMutableURLRequest* newRequest = [connection.originalRequest mutableCopy];
+        newRequest.URL = request.URL;
         redirectString = [NSString stringWithFormat:@" (redirected to %@)", [request URL]];
-        request = newRequest;
+        request = [newRequest autorelease];
     }
     else
     {
