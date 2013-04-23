@@ -12,6 +12,7 @@
   @private
 	DAVSession *_session;
     NSURL *_url;
+    NSURL *_host;
     NSOperationQueue *_queue;
     NSError *_error;
 	BOOL _done;
@@ -20,6 +21,7 @@
 
 @property (readonly) DAVSession *session;
 @property (readonly) NSURL *url;
+@property (readonly) NSURL *host;
 @property (readonly) NSOperationQueue *queue;
 @property (strong, nonatomic) NSError *error;
 @property (strong, nonatomic) id result;

@@ -15,6 +15,7 @@
 
 @synthesize session = _session;
 @synthesize url = _url;
+@synthesize host = _host;
 @synthesize queue = _queue;
 @synthesize error = _error;
 @synthesize result = _result;
@@ -31,10 +32,10 @@
     _url = [[NSURL URLWithString:[defaults stringForKey:@"DAVTestURL"]] retain];
     STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\". ");
 
-    NSURL* host = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]];
-    NSLog(@"Testing %@ as %@ %@", host, self.url.user, self.url.password);
+    _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
+    NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
 
-	_session = [[DAVSession alloc] initWithRootURL:host delegate:self];
+	_session = [[DAVSession alloc] initWithRootURL:_host delegate:self];
 	STAssertNotNil(_session, @"Couldn't create DAV session");
 }
 
@@ -49,10 +50,16 @@
 	}
 }
 
+#define USE_FULL_PATH 1
+
 - (NSString*)fullPathForPath:(NSString*)path
 {
-    NSString* result = path; // actually it's just the raw path
-
+#if USE_FULL_PATH
+    NSString* result = [[self.host path] stringByAppendingPathComponent:path];
+#else
+    NSString* result = path;
+#endif
+    
     return result;
 }
 
