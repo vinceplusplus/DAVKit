@@ -25,9 +25,14 @@
 
 - (void)makeTestFile
 {
+    [self makeTestFileWithPath:@"davkittest/filetest22.txt"];
+}
+
+- (void)makeTestFileWithPath:(NSString*)path
+{
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:self.url];
     request.HTTPBody = [@"blah" dataUsingEncoding:NSUTF8StringEncoding];
-    NSString* fullPath = [self fullPathForPath:@"davkittest/filetest22.txt"];
+    NSString* fullPath = [self fullPathForPath:path];
 	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:fullPath originalRequest:request session:self.session delegate:self];
     [self queueAndWaitForRequest:req];
 	[req release];
@@ -112,15 +117,26 @@
 }
 
 - (void)testPROPFIND {
+    [self removeTestDirectory];
     [self makeTestDirectory];
-    [self makeTestFile];
 
     DAVListingRequest *req = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
     [self queueAndWaitForRequest:req];
 
     STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
 	STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
-	STAssertEquals([self.result count], 1UL, @"Unexpected result count %lu %@", [self.result count], self.result);
+	STAssertEquals([self.result count], 0UL, @"Unexpected result count %lu %@", [self.result count], self.result);
+
+    [self makeTestFile];
+    [self makeTestFileWithPath:@"davkittest/filetest23.txt"];
+    [self makeTestFileWithPath:@"davkittest/filetest24.txt"];
+
+    DAVListingRequest *req2 = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
+    [self queueAndWaitForRequest:req2];
+
+    STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
+	STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
+	STAssertEquals([self.result count], 3UL, @"Unexpected result count %lu %@", [self.result count], self.result);
 
     [self removeTestDirectory];
 }
