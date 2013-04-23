@@ -83,6 +83,11 @@
 	[self notifyDone];
 }
 
+- (void)webDAVSession:(DAVSession *)session appendStringToTranscript:(NSString *)string sent:(BOOL)sent
+{
+    NSLog(@"%@ %@", sent ? @"-->" : @"<--", string);
+}
+
 - (void)tearDown {
     [_queue waitUntilAllOperationsAreFinished];
     [_queue release];
