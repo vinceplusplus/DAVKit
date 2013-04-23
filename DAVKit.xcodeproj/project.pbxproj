@@ -231,17 +231,18 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C9FED591121D989900DD1DFF /* DAVKit.h */,
 				C9FF779F121C6BDF001250C7 /* Core */,
+				221D56C01726A57A00527AD9 /* Requests */,
 				C9FF7787121C6B8B001250C7 /* ISO8601 */,
 				C9FF77A1121C6BF0001250C7 /* Private */,
 				F94970EA132A093600713958 /* RFC1123 */,
 				C9FF77A2121C6C1A001250C7 /* Tests */,
-				C9FED591121D989900DD1DFF /* DAVKit.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		221D56C01726A57A00527AD9 /* Request Classes */ = {
+		221D56C01726A57A00527AD9 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				221D56C11726A60C00527AD9 /* DAVRequests.h */,
@@ -260,7 +261,7 @@
 				C9FED597121D989900DD1DFF /* DAVPutRequest.h */,
 				C9FED598121D989900DD1DFF /* DAVPutRequest.m */,
 			);
-			name = "Request Classes";
+			name = Requests;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -321,7 +322,6 @@
 				C9181BBB121DC31D0022E4AC /* DAVResponseItem.m */,
 				C9FED599121D989900DD1DFF /* DAVSession.h */,
 				C9FED59A121D989900DD1DFF /* DAVSession.m */,
-				221D56C01726A57A00527AD9 /* Request Classes */,
 			);
 			name = Core;
 			sourceTree = "<group>";
