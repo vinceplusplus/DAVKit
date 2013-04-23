@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		221F8B9A17259BFF004E7B9D /* AMkColTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* AMkColTest.m */; };
-		221F8B9B17259BFF004E7B9D /* BPutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B4121D98D600DD1DFF /* BPutTest.m */; };
-		221F8B9C17259BFF004E7B9D /* CGetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B6121D98D600DD1DFF /* CGetTest.m */; };
+		221F8B9A17259BFF004E7B9D /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* BasicTests.m */; };
 		221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
-		221F8B9E17259BFF004E7B9D /* DCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BA121D98D600DD1DFF /* DCopyTest.m */; };
-		221F8B9F17259BFF004E7B9D /* EMoveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BC121D98D600DD1DFF /* EMoveTest.m */; };
-		221F8BA017259BFF004E7B9D /* FListTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BE121D98D600DD1DFF /* FListTest.m */; };
-		221F8BA117259BFF004E7B9D /* GDeleteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5C0121D98D600DD1DFF /* GDeleteTest.m */; };
 		221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */; };
 		221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F8BB217259F16004E7B9D /* SenTestingKit.framework */; };
@@ -60,14 +54,8 @@
 		C9FED5A6121D989900DD1DFF /* DAVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED59A121D989900DD1DFF /* DAVSession.m */; };
 		C9FED5AF121D98B800DD1DFF /* ISO8601DateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED5AD121D98B800DD1DFF /* ISO8601DateFormatter.h */; };
 		C9FED5B0121D98B800DD1DFF /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5AE121D98B800DD1DFF /* ISO8601DateFormatter.m */; };
-		C9FED5C1121D98D600DD1DFF /* AMkColTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* AMkColTest.m */; };
-		C9FED5C2121D98D600DD1DFF /* BPutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B4121D98D600DD1DFF /* BPutTest.m */; };
-		C9FED5C3121D98D600DD1DFF /* CGetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B6121D98D600DD1DFF /* CGetTest.m */; };
+		C9FED5C1121D98D600DD1DFF /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* BasicTests.m */; };
 		C9FED5C4121D98D600DD1DFF /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
-		C9FED5C5121D98D600DD1DFF /* DCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BA121D98D600DD1DFF /* DCopyTest.m */; };
-		C9FED5C6121D98D600DD1DFF /* EMoveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BC121D98D600DD1DFF /* EMoveTest.m */; };
-		C9FED5C7121D98D600DD1DFF /* FListTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5BE121D98D600DD1DFF /* FListTest.m */; };
-		C9FED5C8121D98D600DD1DFF /* GDeleteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5C0121D98D600DD1DFF /* GDeleteTest.m */; };
 		C9FF7821121C7224001250C7 /* DAVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* DAVKit.framework */; };
 		F94970ED132A093600713958 /* NSDateRFC1123.h in Headers */ = {isa = PBXBuildFile; fileRef = F94970EB132A093600713958 /* NSDateRFC1123.h */; };
 		F94970EE132A093600713958 /* NSDateRFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = F94970EC132A093600713958 /* NSDateRFC1123.m */; };
@@ -118,22 +106,10 @@
 		C9FED59A121D989900DD1DFF /* DAVSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVSession.m; path = Sources/Core/DAVSession.m; sourceTree = "<group>"; };
 		C9FED5AD121D98B800DD1DFF /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		C9FED5AE121D98B800DD1DFF /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
-		C9FED5B1121D98D600DD1DFF /* AMkColTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMkColTest.h; path = Sources/Tests/AMkColTest.h; sourceTree = "<group>"; };
-		C9FED5B2121D98D600DD1DFF /* AMkColTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMkColTest.m; path = Sources/Tests/AMkColTest.m; sourceTree = "<group>"; };
-		C9FED5B3121D98D600DD1DFF /* BPutTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPutTest.h; path = Sources/Tests/BPutTest.h; sourceTree = "<group>"; };
-		C9FED5B4121D98D600DD1DFF /* BPutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPutTest.m; path = Sources/Tests/BPutTest.m; sourceTree = "<group>"; };
-		C9FED5B5121D98D600DD1DFF /* CGetTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGetTest.h; path = Sources/Tests/CGetTest.h; sourceTree = "<group>"; };
-		C9FED5B6121D98D600DD1DFF /* CGetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CGetTest.m; path = Sources/Tests/CGetTest.m; sourceTree = "<group>"; };
+		C9FED5B1121D98D600DD1DFF /* BasicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicTests.h; path = Sources/Tests/BasicTests.h; sourceTree = "<group>"; };
+		C9FED5B2121D98D600DD1DFF /* BasicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicTests.m; path = Sources/Tests/BasicTests.m; sourceTree = "<group>"; };
 		C9FED5B7121D98D600DD1DFF /* DAVTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVTest.h; path = Sources/Tests/DAVTest.h; sourceTree = "<group>"; };
 		C9FED5B8121D98D600DD1DFF /* DAVTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVTest.m; path = Sources/Tests/DAVTest.m; sourceTree = "<group>"; };
-		C9FED5B9121D98D600DD1DFF /* DCopyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCopyTest.h; path = Sources/Tests/DCopyTest.h; sourceTree = "<group>"; };
-		C9FED5BA121D98D600DD1DFF /* DCopyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCopyTest.m; path = Sources/Tests/DCopyTest.m; sourceTree = "<group>"; };
-		C9FED5BB121D98D600DD1DFF /* EMoveTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMoveTest.h; path = Sources/Tests/EMoveTest.h; sourceTree = "<group>"; };
-		C9FED5BC121D98D600DD1DFF /* EMoveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMoveTest.m; path = Sources/Tests/EMoveTest.m; sourceTree = "<group>"; };
-		C9FED5BD121D98D600DD1DFF /* FListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FListTest.h; path = Sources/Tests/FListTest.h; sourceTree = "<group>"; };
-		C9FED5BE121D98D600DD1DFF /* FListTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FListTest.m; path = Sources/Tests/FListTest.m; sourceTree = "<group>"; };
-		C9FED5BF121D98D600DD1DFF /* GDeleteTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDeleteTest.h; path = Sources/Tests/GDeleteTest.h; sourceTree = "<group>"; };
-		C9FED5C0121D98D600DD1DFF /* GDeleteTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDeleteTest.m; path = Sources/Tests/GDeleteTest.m; sourceTree = "<group>"; };
 		C9FF77EC121C6F51001250C7 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FF77ED121C6F51001250C7 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		F94970EB132A093600713958 /* NSDateRFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateRFC1123.h; sourceTree = "<group>"; };
@@ -303,22 +279,10 @@
 		C9FF77A2121C6C1A001250C7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C9FED5B1121D98D600DD1DFF /* AMkColTest.h */,
-				C9FED5B2121D98D600DD1DFF /* AMkColTest.m */,
-				C9FED5B3121D98D600DD1DFF /* BPutTest.h */,
-				C9FED5B4121D98D600DD1DFF /* BPutTest.m */,
-				C9FED5B5121D98D600DD1DFF /* CGetTest.h */,
-				C9FED5B6121D98D600DD1DFF /* CGetTest.m */,
+				C9FED5B1121D98D600DD1DFF /* BasicTests.h */,
+				C9FED5B2121D98D600DD1DFF /* BasicTests.m */,
 				C9FED5B7121D98D600DD1DFF /* DAVTest.h */,
 				C9FED5B8121D98D600DD1DFF /* DAVTest.m */,
-				C9FED5B9121D98D600DD1DFF /* DCopyTest.h */,
-				C9FED5BA121D98D600DD1DFF /* DCopyTest.m */,
-				C9FED5BB121D98D600DD1DFF /* EMoveTest.h */,
-				C9FED5BC121D98D600DD1DFF /* EMoveTest.m */,
-				C9FED5BD121D98D600DD1DFF /* FListTest.h */,
-				C9FED5BE121D98D600DD1DFF /* FListTest.m */,
-				C9FED5BF121D98D600DD1DFF /* GDeleteTest.h */,
-				C9FED5C0121D98D600DD1DFF /* GDeleteTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -537,14 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221F8B9A17259BFF004E7B9D /* AMkColTest.m in Sources */,
-				221F8B9B17259BFF004E7B9D /* BPutTest.m in Sources */,
-				221F8B9C17259BFF004E7B9D /* CGetTest.m in Sources */,
+				221F8B9A17259BFF004E7B9D /* BasicTests.m in Sources */,
 				221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */,
-				221F8B9E17259BFF004E7B9D /* DCopyTest.m in Sources */,
-				221F8B9F17259BFF004E7B9D /* EMoveTest.m in Sources */,
-				221F8BA017259BFF004E7B9D /* FListTest.m in Sources */,
-				221F8BA117259BFF004E7B9D /* GDeleteTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,14 +542,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FED5C1121D98D600DD1DFF /* AMkColTest.m in Sources */,
-				C9FED5C2121D98D600DD1DFF /* BPutTest.m in Sources */,
-				C9FED5C3121D98D600DD1DFF /* CGetTest.m in Sources */,
+				C9FED5C1121D98D600DD1DFF /* BasicTests.m in Sources */,
 				C9FED5C4121D98D600DD1DFF /* DAVTest.m in Sources */,
-				C9FED5C5121D98D600DD1DFF /* DCopyTest.m in Sources */,
-				C9FED5C6121D98D600DD1DFF /* EMoveTest.m in Sources */,
-				C9FED5C7121D98D600DD1DFF /* FListTest.m in Sources */,
-				C9FED5C8121D98D600DD1DFF /* GDeleteTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
