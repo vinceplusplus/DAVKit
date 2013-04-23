@@ -86,6 +86,7 @@
 - (void)tearDown {
     [_queue waitUntilAllOperationsAreFinished];
     [_queue release];
+    _queue = nil;
 	[_session release];
 	_session = nil;
 }
