@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "221F8B9517259BFF004E7B9D"
-               BuildableName = "Tests copy.octest"
+               BuildableName = "Tests iOS.octest"
                BlueprintName = "Tests-iOS"
                ReferencedContainer = "container:DAVKit.xcodeproj">
             </BuildableReference>
