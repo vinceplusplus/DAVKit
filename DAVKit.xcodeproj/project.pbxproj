@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221D569E1726A38600527AD9 /* DAVCopyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D569C1726A38600527AD9 /* DAVCopyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D569F1726A38600527AD9 /* DAVCopyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D569C1726A38600527AD9 /* DAVCopyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56A01726A38600527AD9 /* DAVCopyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D569D1726A38600527AD9 /* DAVCopyRequest.m */; };
+		221D56A11726A38600527AD9 /* DAVCopyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D569D1726A38600527AD9 /* DAVCopyRequest.m */; };
+		221D56A41726A40000527AD9 /* DAVDeleteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56A21726A40000527AD9 /* DAVDeleteRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56A51726A40000527AD9 /* DAVDeleteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56A21726A40000527AD9 /* DAVDeleteRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56A61726A40000527AD9 /* DAVDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56A31726A40000527AD9 /* DAVDeleteRequest.m */; };
+		221D56A71726A40000527AD9 /* DAVDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56A31726A40000527AD9 /* DAVDeleteRequest.m */; };
+		221D56AA1726A43E00527AD9 /* DAVGetRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56A81726A43E00527AD9 /* DAVGetRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56AB1726A43E00527AD9 /* DAVGetRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56A81726A43E00527AD9 /* DAVGetRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56AC1726A43E00527AD9 /* DAVGetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56A91726A43E00527AD9 /* DAVGetRequest.m */; };
+		221D56AD1726A43E00527AD9 /* DAVGetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56A91726A43E00527AD9 /* DAVGetRequest.m */; };
+		221D56B01726A47E00527AD9 /* DAVListingRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56AE1726A47E00527AD9 /* DAVListingRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56B11726A47E00527AD9 /* DAVListingRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56AE1726A47E00527AD9 /* DAVListingRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56B21726A47E00527AD9 /* DAVListingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56AF1726A47E00527AD9 /* DAVListingRequest.m */; };
+		221D56B31726A47E00527AD9 /* DAVListingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56AF1726A47E00527AD9 /* DAVListingRequest.m */; };
+		221D56B61726A4D600527AD9 /* DAVMakeCollectionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56B41726A4D600527AD9 /* DAVMakeCollectionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56B71726A4D600527AD9 /* DAVMakeCollectionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56B41726A4D600527AD9 /* DAVMakeCollectionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56B81726A4D600527AD9 /* DAVMakeCollectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56B51726A4D600527AD9 /* DAVMakeCollectionRequest.m */; };
+		221D56B91726A4D600527AD9 /* DAVMakeCollectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56B51726A4D600527AD9 /* DAVMakeCollectionRequest.m */; };
+		221D56BC1726A51400527AD9 /* DAVMoveRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56BA1726A51400527AD9 /* DAVMoveRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56BD1726A51400527AD9 /* DAVMoveRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56BA1726A51400527AD9 /* DAVMoveRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56BE1726A51400527AD9 /* DAVMoveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56BB1726A51400527AD9 /* DAVMoveRequest.m */; };
+		221D56BF1726A51400527AD9 /* DAVMoveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D56BB1726A51400527AD9 /* DAVMoveRequest.m */; };
+		221D56C21726A60C00527AD9 /* DAVRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56C11726A60C00527AD9 /* DAVRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		221D56C31726A60C00527AD9 /* DAVRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56C11726A60C00527AD9 /* DAVRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		221F8B9A17259BFF004E7B9D /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* BasicTests.m */; };
 		221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
 		221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */; };
@@ -27,8 +53,8 @@
 		5FEEF27916CE8461002C1CBF /* DAVRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED595121D989900DD1DFF /* DAVRequest.m */; };
 		5FEEF27A16CE8461002C1CBF /* DAVRequestGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A4E37C1406E12C004E4AEB /* DAVRequestGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEEF27B16CE8461002C1CBF /* DAVRequestGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4E37D1406E12C004E4AEB /* DAVRequestGroup.m */; };
-		5FEEF27C16CE8461002C1CBF /* DAVRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED597121D989900DD1DFF /* DAVRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FEEF27D16CE8461002C1CBF /* DAVRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED598121D989900DD1DFF /* DAVRequests.m */; };
+		5FEEF27C16CE8461002C1CBF /* DAVPutRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED597121D989900DD1DFF /* DAVPutRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FEEF27D16CE8461002C1CBF /* DAVPutRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED598121D989900DD1DFF /* DAVPutRequest.m */; };
 		5FEEF27E16CE8461002C1CBF /* DAVResponseItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C9181BBA121DC31D0022E4AC /* DAVResponseItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEEF27F16CE8461002C1CBF /* DAVResponseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9181BBB121DC31D0022E4AC /* DAVResponseItem.m */; };
 		5FEEF28016CE8461002C1CBF /* DAVSession.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED599121D989900DD1DFF /* DAVSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,8 +74,8 @@
 		C9FED5A0121D989900DD1DFF /* DAVRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED594121D989900DD1DFF /* DAVRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9FED5A1121D989900DD1DFF /* DAVRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED595121D989900DD1DFF /* DAVRequest.m */; };
 		C9FED5A2121D989900DD1DFF /* DAVRequest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED596121D989900DD1DFF /* DAVRequest+Private.h */; };
-		C9FED5A3121D989900DD1DFF /* DAVRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED597121D989900DD1DFF /* DAVRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9FED5A4121D989900DD1DFF /* DAVRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED598121D989900DD1DFF /* DAVRequests.m */; };
+		C9FED5A3121D989900DD1DFF /* DAVPutRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED597121D989900DD1DFF /* DAVPutRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9FED5A4121D989900DD1DFF /* DAVPutRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED598121D989900DD1DFF /* DAVPutRequest.m */; };
 		C9FED5A5121D989900DD1DFF /* DAVSession.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED599121D989900DD1DFF /* DAVSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9FED5A6121D989900DD1DFF /* DAVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED59A121D989900DD1DFF /* DAVSession.m */; };
 		C9FED5AF121D98B800DD1DFF /* ISO8601DateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED5AD121D98B800DD1DFF /* ISO8601DateFormatter.h */; };
@@ -79,6 +105,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221D569C1726A38600527AD9 /* DAVCopyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVCopyRequest.h; path = Sources/Core/DAVCopyRequest.h; sourceTree = "<group>"; };
+		221D569D1726A38600527AD9 /* DAVCopyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVCopyRequest.m; path = Sources/Core/DAVCopyRequest.m; sourceTree = "<group>"; };
+		221D56A21726A40000527AD9 /* DAVDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVDeleteRequest.h; path = Sources/Core/DAVDeleteRequest.h; sourceTree = "<group>"; };
+		221D56A31726A40000527AD9 /* DAVDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVDeleteRequest.m; path = Sources/Core/DAVDeleteRequest.m; sourceTree = "<group>"; };
+		221D56A81726A43E00527AD9 /* DAVGetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVGetRequest.h; path = Sources/Core/DAVGetRequest.h; sourceTree = "<group>"; };
+		221D56A91726A43E00527AD9 /* DAVGetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVGetRequest.m; path = Sources/Core/DAVGetRequest.m; sourceTree = "<group>"; };
+		221D56AE1726A47E00527AD9 /* DAVListingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVListingRequest.h; path = Sources/Core/DAVListingRequest.h; sourceTree = "<group>"; };
+		221D56AF1726A47E00527AD9 /* DAVListingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVListingRequest.m; path = Sources/Core/DAVListingRequest.m; sourceTree = "<group>"; };
+		221D56B41726A4D600527AD9 /* DAVMakeCollectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVMakeCollectionRequest.h; path = Sources/Core/DAVMakeCollectionRequest.h; sourceTree = "<group>"; };
+		221D56B51726A4D600527AD9 /* DAVMakeCollectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVMakeCollectionRequest.m; path = Sources/Core/DAVMakeCollectionRequest.m; sourceTree = "<group>"; };
+		221D56BA1726A51400527AD9 /* DAVMoveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVMoveRequest.h; path = Sources/Core/DAVMoveRequest.h; sourceTree = "<group>"; };
+		221D56BB1726A51400527AD9 /* DAVMoveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVMoveRequest.m; path = Sources/Core/DAVMoveRequest.m; sourceTree = "<group>"; };
+		221D56C11726A60C00527AD9 /* DAVRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequests.h; path = Sources/Core/DAVRequests.h; sourceTree = "<group>"; };
 		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F8BB217259F16004E7B9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
 		32DBCF5E0370ADEE00C91783 /* DAVKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVKit_Prefix.pch; sourceTree = "<group>"; };
@@ -100,8 +139,8 @@
 		C9FED594121D989900DD1DFF /* DAVRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequest.h; path = Sources/Core/DAVRequest.h; sourceTree = "<group>"; };
 		C9FED595121D989900DD1DFF /* DAVRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVRequest.m; path = Sources/Core/DAVRequest.m; sourceTree = "<group>"; };
 		C9FED596121D989900DD1DFF /* DAVRequest+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DAVRequest+Private.h"; path = "Sources/Core/DAVRequest+Private.h"; sourceTree = "<group>"; };
-		C9FED597121D989900DD1DFF /* DAVRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequests.h; path = Sources/Core/DAVRequests.h; sourceTree = "<group>"; };
-		C9FED598121D989900DD1DFF /* DAVRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVRequests.m; path = Sources/Core/DAVRequests.m; sourceTree = "<group>"; };
+		C9FED597121D989900DD1DFF /* DAVPutRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVPutRequest.h; path = Sources/Core/DAVPutRequest.h; sourceTree = "<group>"; };
+		C9FED598121D989900DD1DFF /* DAVPutRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVPutRequest.m; path = Sources/Core/DAVPutRequest.m; sourceTree = "<group>"; };
 		C9FED599121D989900DD1DFF /* DAVSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVSession.h; path = Sources/Core/DAVSession.h; sourceTree = "<group>"; };
 		C9FED59A121D989900DD1DFF /* DAVSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVSession.m; path = Sources/Core/DAVSession.m; sourceTree = "<group>"; };
 		C9FED5AD121D98B800DD1DFF /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -202,6 +241,28 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		221D56C01726A57A00527AD9 /* Request Classes */ = {
+			isa = PBXGroup;
+			children = (
+				221D56C11726A60C00527AD9 /* DAVRequests.h */,
+				221D569C1726A38600527AD9 /* DAVCopyRequest.h */,
+				221D569D1726A38600527AD9 /* DAVCopyRequest.m */,
+				221D56A21726A40000527AD9 /* DAVDeleteRequest.h */,
+				221D56A31726A40000527AD9 /* DAVDeleteRequest.m */,
+				221D56A81726A43E00527AD9 /* DAVGetRequest.h */,
+				221D56A91726A43E00527AD9 /* DAVGetRequest.m */,
+				221D56AE1726A47E00527AD9 /* DAVListingRequest.h */,
+				221D56AF1726A47E00527AD9 /* DAVListingRequest.m */,
+				221D56B41726A4D600527AD9 /* DAVMakeCollectionRequest.h */,
+				221D56B51726A4D600527AD9 /* DAVMakeCollectionRequest.m */,
+				221D56BA1726A51400527AD9 /* DAVMoveRequest.h */,
+				221D56BB1726A51400527AD9 /* DAVMoveRequest.m */,
+				C9FED597121D989900DD1DFF /* DAVPutRequest.h */,
+				C9FED598121D989900DD1DFF /* DAVPutRequest.m */,
+			);
+			name = "Request Classes";
+			sourceTree = "<group>";
+		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,12 +317,11 @@
 				C9FED595121D989900DD1DFF /* DAVRequest.m */,
 				C9A4E37C1406E12C004E4AEB /* DAVRequestGroup.h */,
 				C9A4E37D1406E12C004E4AEB /* DAVRequestGroup.m */,
-				C9FED597121D989900DD1DFF /* DAVRequests.h */,
-				C9FED598121D989900DD1DFF /* DAVRequests.m */,
 				C9181BBA121DC31D0022E4AC /* DAVResponseItem.h */,
 				C9181BBB121DC31D0022E4AC /* DAVResponseItem.m */,
 				C9FED599121D989900DD1DFF /* DAVSession.h */,
 				C9FED59A121D989900DD1DFF /* DAVSession.m */,
+				221D56C01726A57A00527AD9 /* Request Classes */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -311,9 +371,16 @@
 				5FEEF27616CE8461002C1CBF /* DAVBaseRequest.h in Headers */,
 				5FEEF27816CE8461002C1CBF /* DAVRequest.h in Headers */,
 				5FEEF27A16CE8461002C1CBF /* DAVRequestGroup.h in Headers */,
-				5FEEF27C16CE8461002C1CBF /* DAVRequests.h in Headers */,
+				5FEEF27C16CE8461002C1CBF /* DAVPutRequest.h in Headers */,
 				5FEEF27E16CE8461002C1CBF /* DAVResponseItem.h in Headers */,
 				5FEEF28016CE8461002C1CBF /* DAVSession.h in Headers */,
+				221D569F1726A38600527AD9 /* DAVCopyRequest.h in Headers */,
+				221D56A51726A40000527AD9 /* DAVDeleteRequest.h in Headers */,
+				221D56AB1726A43E00527AD9 /* DAVGetRequest.h in Headers */,
+				221D56B11726A47E00527AD9 /* DAVListingRequest.h in Headers */,
+				221D56B71726A4D600527AD9 /* DAVMakeCollectionRequest.h in Headers */,
+				221D56BD1726A51400527AD9 /* DAVMoveRequest.h in Headers */,
+				221D56C31726A60C00527AD9 /* DAVRequests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,11 +394,18 @@
 				C9FED5A0121D989900DD1DFF /* DAVRequest.h in Headers */,
 				C9A4E37E1406E12C004E4AEB /* DAVRequestGroup.h in Headers */,
 				C9FED5A2121D989900DD1DFF /* DAVRequest+Private.h in Headers */,
-				C9FED5A3121D989900DD1DFF /* DAVRequests.h in Headers */,
+				C9FED5A3121D989900DD1DFF /* DAVPutRequest.h in Headers */,
 				C9FED5A5121D989900DD1DFF /* DAVSession.h in Headers */,
 				C9FED5AF121D98B800DD1DFF /* ISO8601DateFormatter.h in Headers */,
 				C9181BBC121DC31D0022E4AC /* DAVResponseItem.h in Headers */,
 				F94970ED132A093600713958 /* NSDateRFC1123.h in Headers */,
+				221D569E1726A38600527AD9 /* DAVCopyRequest.h in Headers */,
+				221D56A41726A40000527AD9 /* DAVDeleteRequest.h in Headers */,
+				221D56AA1726A43E00527AD9 /* DAVGetRequest.h in Headers */,
+				221D56B01726A47E00527AD9 /* DAVListingRequest.h in Headers */,
+				221D56B61726A4D600527AD9 /* DAVMakeCollectionRequest.h in Headers */,
+				221D56BC1726A51400527AD9 /* DAVMoveRequest.h in Headers */,
+				221D56C21726A60C00527AD9 /* DAVRequests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,9 +590,15 @@
 				5FEEF27716CE8461002C1CBF /* DAVBaseRequest.m in Sources */,
 				5FEEF27916CE8461002C1CBF /* DAVRequest.m in Sources */,
 				5FEEF27B16CE8461002C1CBF /* DAVRequestGroup.m in Sources */,
-				5FEEF27D16CE8461002C1CBF /* DAVRequests.m in Sources */,
+				5FEEF27D16CE8461002C1CBF /* DAVPutRequest.m in Sources */,
 				5FEEF27F16CE8461002C1CBF /* DAVResponseItem.m in Sources */,
 				5FEEF28116CE8461002C1CBF /* DAVSession.m in Sources */,
+				221D56A11726A38600527AD9 /* DAVCopyRequest.m in Sources */,
+				221D56A71726A40000527AD9 /* DAVDeleteRequest.m in Sources */,
+				221D56AD1726A43E00527AD9 /* DAVGetRequest.m in Sources */,
+				221D56B31726A47E00527AD9 /* DAVListingRequest.m in Sources */,
+				221D56B91726A4D600527AD9 /* DAVMakeCollectionRequest.m in Sources */,
+				221D56BF1726A51400527AD9 /* DAVMoveRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,13 +608,19 @@
 			files = (
 				C9FED59F121D989900DD1DFF /* DAVListingParser.m in Sources */,
 				C9FED5A1121D989900DD1DFF /* DAVRequest.m in Sources */,
-				C9FED5A4121D989900DD1DFF /* DAVRequests.m in Sources */,
+				C9FED5A4121D989900DD1DFF /* DAVPutRequest.m in Sources */,
 				C9FED5A6121D989900DD1DFF /* DAVSession.m in Sources */,
 				C9FED5B0121D98B800DD1DFF /* ISO8601DateFormatter.m in Sources */,
 				C9181BBD121DC31D0022E4AC /* DAVResponseItem.m in Sources */,
 				F94970EE132A093600713958 /* NSDateRFC1123.m in Sources */,
 				C9A4E37F1406E12C004E4AEB /* DAVRequestGroup.m in Sources */,
 				C9A4E3A11406E9CF004E4AEB /* DAVBaseRequest.m in Sources */,
+				221D56A01726A38600527AD9 /* DAVCopyRequest.m in Sources */,
+				221D56A61726A40000527AD9 /* DAVDeleteRequest.m in Sources */,
+				221D56AC1726A43E00527AD9 /* DAVGetRequest.m in Sources */,
+				221D56B21726A47E00527AD9 /* DAVListingRequest.m in Sources */,
+				221D56B81726A4D600527AD9 /* DAVMakeCollectionRequest.m in Sources */,
+				221D56BE1726A51400527AD9 /* DAVMoveRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

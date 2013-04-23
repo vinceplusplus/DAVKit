@@ -9,7 +9,6 @@
 
 #import "DAVRequest.h"
 #import "DAVRequest+Private.h"
-#import "DAVRequests.h"
 
 @implementation DAVSession
 
