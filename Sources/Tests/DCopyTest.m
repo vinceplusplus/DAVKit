@@ -14,12 +14,9 @@
 	req.destinationPath = @"davkittest/filetest23.txt";
 	req.overwrite = YES;
     [self queueAndWaitForRequest:req];
-}
 
-- (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {
-	STAssertNil(result, @"No result expected for COPY");
-	
-	[self notifyDone];
+    STAssertNil(self.error, @"Unexpected error for COPY %@", self.error);
+    STAssertNil(self.result, @"Unexpected result for COPY %@", self.result);
 }
 
 @end

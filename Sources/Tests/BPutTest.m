@@ -18,12 +18,9 @@
 	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:fullPath originalRequest:request session:self.session delegate:self];
     [self queueAndWaitForRequest:req];
 	[req release];
-}
 
-- (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {
-	STAssertNil(result, @"No result expected for PUT");
-	
-	[self notifyDone];
+    STAssertNil(self.error, @"Unexpected error for PUT %@", self.error);
+    STAssertNil(self.result, @"Unexpected result for PUT %@", self.result);
 }
 
 @end

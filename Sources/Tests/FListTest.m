@@ -12,13 +12,10 @@
 - (void)testRequest {
     DAVListingRequest *req = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
     [self queueAndWaitForRequest:req];
-}
 
-- (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {
-	STAssertTrue([result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
-	STAssertTrue([result count] == 3, @"Array should contain 3 objects");
-	
-	[self notifyDone];
+    STAssertNil(self.error, @"Unexpected error for MOVE %@", self.error);
+	STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
+	STAssertTrue([self.result count] == 3, @"Array should contain 3 objects");
 }
 
 @end

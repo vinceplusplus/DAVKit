@@ -13,12 +13,9 @@
     DAVMoveRequest *req = [self requestOfClass:[DAVMoveRequest class] withPath:@"davkittest/filetest23.txt"];
 	req.destinationPath = [self fullPathForPath:@"davkittest/filetest24.txt"];
     [self queueAndWaitForRequest:req];
-}
 
-- (void)request:(DAVRequest *)aRequest didSucceedWithResult:(id)result {
-	STAssertNil(result, @"No result expected for MOVE");
-	
-	[self notifyDone];
+    STAssertNil(self.error, @"Unexpected error for MOVE %@", self.error);
+    STAssertNil(self.result, @"Unexpected result for MOVE %@", self.result);
 }
 
 @end
