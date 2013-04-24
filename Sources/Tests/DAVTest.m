@@ -28,15 +28,27 @@
     _queue.name = @"DAVTest";
     _queue.maxConcurrentOperationCount = 1;
 
+    // We read the server to use from a defaults setting.
+    // If nothing is set, we assert with an error (so that people know they need to set something).
+    // If the server is set to "Off" though, we suppress the tests. This lets you at least verify that the tests build.
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    _url = [[NSURL URLWithString:[defaults stringForKey:@"DAVTestURL"]] retain];
-    STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\". ");
+    NSString* setting = [defaults stringForKey:@"DAVTestURL"];
+    if (![setting isEqualToString:@"Off"])
+    {
+        _url = [[NSURL URLWithString:setting] retain];
+        STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\". ");
 
-    _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
-    NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
+        _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
+        NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
 
-	_session = [[DAVSession alloc] initWithRootURL:_host delegate:self];
-	STAssertNotNil(_session, @"Couldn't create DAV session");
+        _session = [[DAVSession alloc] initWithRootURL:_host delegate:self];
+        STAssertNotNil(_session, @"Couldn't create DAV session");
+    }
+}
+
+- (BOOL)isEnabled
+{
+    return self.session != nil;
 }
 
 - (void)notifyDone {

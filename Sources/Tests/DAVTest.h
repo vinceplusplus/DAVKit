@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSError *error;
 @property (strong, nonatomic) id result;
 
+- (BOOL)isEnabled;
 - (void)notifyDone;
 - (void)queueAndWaitForRequest:(DAVRequest*)request;
 - (void)waitUntilWeAreDone;
