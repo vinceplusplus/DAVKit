@@ -554,6 +554,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			showEnvVarsInLog = 0;
 		};
 		C9FF77EA121C6F51001250C7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -733,7 +734,6 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos6.1;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -755,7 +755,6 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos6.1;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
