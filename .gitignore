@@ -17,3 +17,5 @@ xcuserdata
 profile
 *.moved-aside
 *.xcodeproj/project.xcworkspace
+
+test-build/

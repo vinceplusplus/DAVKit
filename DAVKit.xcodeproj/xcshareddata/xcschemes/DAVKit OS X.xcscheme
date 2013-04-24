@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8DC2EF4F0486A6940098B216"
                BuildableName = "DAVKit.framework"
-               BlueprintName = "DAVKit"
+               BlueprintName = "DAVKit OS X"
                ReferencedContainer = "container:DAVKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9FF77EB121C6F51001250C7"
                BuildableName = "Tests.octest"
-               BlueprintName = "Tests"
+               BlueprintName = "Tests OS X"
                ReferencedContainer = "container:DAVKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

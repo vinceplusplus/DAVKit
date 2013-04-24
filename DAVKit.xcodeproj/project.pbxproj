@@ -35,7 +35,7 @@
 		221D56C31726A60C00527AD9 /* DAVRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = 221D56C11726A60C00527AD9 /* DAVRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		221F8B9A17259BFF004E7B9D /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B2121D98D600DD1DFF /* BasicTests.m */; };
 		221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
-		221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */; };
+		221F8BAC17259C79004E7B9D /* libDAVKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit.a */; };
 		221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F8BB217259F16004E7B9D /* SenTestingKit.framework */; };
 		221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */; };
@@ -121,7 +121,7 @@
 		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F8BB217259F16004E7B9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
 		32DBCF5E0370ADEE00C91783 /* DAVKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVKit_Prefix.pch; sourceTree = "<group>"; };
-		5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libDAVKit-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FEEF26016CE830C002C1CBF /* libDAVKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDAVKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEEF26216CE830C002C1CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		5FEEF28516CE868A002C1CBF /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -161,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */,
-				221F8BAC17259C79004E7B9D /* libDAVKit-iOS.a in Frameworks */,
+				221F8BAC17259C79004E7B9D /* libDAVKit.a in Frameworks */,
 				221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */,
 				221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */,
 			);
@@ -201,7 +201,7 @@
 			children = (
 				8DC2EF5B0486A6940098B216 /* DAVKit.framework */,
 				C9FF77EC121C6F51001250C7 /* Tests.octest */,
-				5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */,
+				5FEEF26016CE830C002C1CBF /* libDAVKit.a */,
 				221F8BA817259BFF004E7B9D /* Tests iOS.octest */,
 			);
 			name = Products;
@@ -412,9 +412,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		221F8B9517259BFF004E7B9D /* Tests-iOS */ = {
+		221F8B9517259BFF004E7B9D /* Tests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests-iOS" */;
+			buildConfigurationList = 221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests iOS" */;
 			buildPhases = (
 				221F8B9817259BFF004E7B9D /* Resources */,
 				221F8B9917259BFF004E7B9D /* Sources */,
@@ -426,14 +426,14 @@
 			dependencies = (
 				221F8BAB17259C70004E7B9D /* PBXTargetDependency */,
 			);
-			name = "Tests-iOS";
+			name = "Tests iOS";
 			productName = Tests;
 			productReference = 221F8BA817259BFF004E7B9D /* Tests iOS.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */ = {
+		5FEEF25F16CE830C002C1CBF /* DAVKit iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FEEF26D16CE830C002C1CBF /* Build configuration list for PBXNativeTarget "DAVKit-iOS" */;
+			buildConfigurationList = 5FEEF26D16CE830C002C1CBF /* Build configuration list for PBXNativeTarget "DAVKit iOS" */;
 			buildPhases = (
 				5FEEF25C16CE830C002C1CBF /* Sources */,
 				5FEEF25D16CE830C002C1CBF /* Frameworks */,
@@ -443,14 +443,14 @@
 			);
 			dependencies = (
 			);
-			name = "DAVKit-iOS";
+			name = "DAVKit iOS";
 			productName = "DAVKit-iOS";
-			productReference = 5FEEF26016CE830C002C1CBF /* libDAVKit-iOS.a */;
+			productReference = 5FEEF26016CE830C002C1CBF /* libDAVKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		8DC2EF4F0486A6940098B216 /* DAVKit */ = {
+		8DC2EF4F0486A6940098B216 /* DAVKit OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "DAVKit" */;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "DAVKit OS X" */;
 			buildPhases = (
 				8DC2EF500486A6940098B216 /* Headers */,
 				8DC2EF520486A6940098B216 /* Resources */,
@@ -461,15 +461,15 @@
 			);
 			dependencies = (
 			);
-			name = DAVKit;
+			name = "DAVKit OS X";
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = DAVKit;
 			productReference = 8DC2EF5B0486A6940098B216 /* DAVKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C9FF77EB121C6F51001250C7 /* Tests */ = {
+		C9FF77EB121C6F51001250C7 /* Tests OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9FF77F1121C6F52001250C7 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = C9FF77F1121C6F52001250C7 /* Build configuration list for PBXNativeTarget "Tests OS X" */;
 			buildPhases = (
 				C9FF77E7121C6F51001250C7 /* Resources */,
 				C9FF77E8121C6F51001250C7 /* Sources */,
@@ -481,7 +481,7 @@
 			dependencies = (
 				C9FF77F3121C6F58001250C7 /* PBXTargetDependency */,
 			);
-			name = Tests;
+			name = "Tests OS X";
 			productName = Tests;
 			productReference = C9FF77EC121C6F51001250C7 /* Tests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -509,10 +509,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DC2EF4F0486A6940098B216 /* DAVKit */,
-				C9FF77EB121C6F51001250C7 /* Tests */,
-				5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */,
-				221F8B9517259BFF004E7B9D /* Tests-iOS */,
+				8DC2EF4F0486A6940098B216 /* DAVKit OS X */,
+				C9FF77EB121C6F51001250C7 /* Tests OS X */,
+				5FEEF25F16CE830C002C1CBF /* DAVKit iOS */,
+				221F8B9517259BFF004E7B9D /* Tests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -638,12 +638,12 @@
 /* Begin PBXTargetDependency section */
 		221F8BAB17259C70004E7B9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5FEEF25F16CE830C002C1CBF /* DAVKit-iOS */;
+			target = 5FEEF25F16CE830C002C1CBF /* DAVKit iOS */;
 			targetProxy = 221F8BAA17259C70004E7B9D /* PBXContainerItemProxy */;
 		};
 		C9FF77F3121C6F58001250C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* DAVKit */;
+			target = 8DC2EF4F0486A6940098B216 /* DAVKit OS X */;
 			targetProxy = C9FF77F2121C6F58001250C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -785,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DAVKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DAVKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -810,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DAVKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DAVKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -875,7 +875,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "DAVKit" */ = {
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "DAVKit OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91AE08733DA50010E9CD /* Debug */,
@@ -893,7 +893,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests-iOS" */ = {
+		221F8BA517259BFF004E7B9D /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				221F8BA617259BFF004E7B9D /* Debug */,
@@ -902,7 +902,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FEEF26D16CE830C002C1CBF /* Build configuration list for PBXNativeTarget "DAVKit-iOS" */ = {
+		5FEEF26D16CE830C002C1CBF /* Build configuration list for PBXNativeTarget "DAVKit iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FEEF26B16CE830C002C1CBF /* Debug */,
@@ -911,7 +911,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9FF77F1121C6F52001250C7 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		C9FF77F1121C6F52001250C7 /* Build configuration list for PBXNativeTarget "Tests OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9FF77EF121C6F52001250C7 /* Debug */,
