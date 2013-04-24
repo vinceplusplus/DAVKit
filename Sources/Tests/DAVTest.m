@@ -36,7 +36,7 @@
     if (![setting isEqualToString:@"Off"])
     {
         _url = [[NSURL URLWithString:setting] retain];
-        STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/6.1/Library/Preferences, so you'll need to edit that one manually.");
+        STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/Library/Preferences, so you'll need to edit that one manually.");
 
         _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
         NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
