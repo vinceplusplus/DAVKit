@@ -733,7 +733,7 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos6.1;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -755,7 +755,7 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos6.1;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
