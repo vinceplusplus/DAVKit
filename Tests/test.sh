@@ -44,8 +44,8 @@ testIOS()
 		cat "$testerr"
 	else
 		cd "$build"
-		"../$ocunit2junit" < "$testout"
 		rm -rf test-reports
+		"../$ocunit2junit" < "$testout"
 		mv test-reports test-ios
 		cd ..
 	fi
