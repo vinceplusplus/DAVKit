@@ -667,6 +667,7 @@
 				GCC_PREFIX_HEADER = DAVKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = DAVKit;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -687,6 +688,7 @@
 				GCC_PREFIX_HEADER = DAVKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = DAVKit;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
