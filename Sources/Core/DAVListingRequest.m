@@ -32,11 +32,13 @@
 		[req setValue:[NSString stringWithFormat:@"%ld", (unsigned long) _depth] forHTTPHeaderField:@"Depth"];
 	}
 	
-	[req setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	[req setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
 	
 	NSString *xml = @"<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
 					@"<D:propfind xmlns:D=\"DAV:\"><D:allprop/></D:propfind>";
-	
+
+    [req setValue:[NSString stringWithFormat:@"%ld",[xml length]] forHTTPHeaderField:@"Content-Length"];
+
 	[req setHTTPBody:[xml dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	return [req autorelease];

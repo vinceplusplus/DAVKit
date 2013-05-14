@@ -215,6 +215,19 @@
     }
 }
 
+- (BOOL)path:(NSString*)path1 matchesPath:(NSString*)path2
+{
+    NSUInteger lastChar1 = [path1 length] - 1;
+    if ([path1 characterAtIndex:lastChar1] == '/')
+        path1 = [path1 substringToIndex:lastChar1];
+
+    NSUInteger lastChar2 = [path2 length] - 1;
+    if ([path2 characterAtIndex:lastChar2] == '/')
+        path2 = [path2 substringToIndex:lastChar2];
+
+    return [path1 isEqualToString:path2];
+}
+
 - (void)testPROPFIND {
     if ([self isEnabled])
     {
@@ -227,7 +240,7 @@
 
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
         STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
-        STAssertEquals([self.result count], 0UL, @"Unexpected result count %lu %@", [self.result count], self.result);
+        STAssertEquals([self.result count], 1UL, @"Unexpected result count %lu %@", [self.result count], self.result);
 
         NSString* path1 = @"davkittest/filetest22.txt";
         NSString* path2 = @"davkittest/filetest23.txt";
@@ -243,14 +256,14 @@
 
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
         STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
-        STAssertEquals([self.result count], 3UL, @"Unexpected result count %lu %@", [self.result count], self.result);
+        STAssertEquals([self.result count], 4UL, @"Unexpected result count %lu %@", [self.result count], self.result);
 
         NSUInteger n = 0;
-        NSArray* names = @[path1, path2, path3];
+        NSArray* names = @[@"davkittest/", path1, path2, path3];
         for (DAVResponseItem* item in self.result)
         {
             NSString* expected = [self fullPathForPath:names[n++]];
-            STAssertTrue([item.href isEqualToString:expected], @"expected %@ got %@", expected, item.href);
+            STAssertTrue([self path:item.href matchesPath:expected], @"expected %@ got %@", expected, item.href);
         }
 
         [self removeTestDirectory];
