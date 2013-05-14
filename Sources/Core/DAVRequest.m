@@ -133,10 +133,6 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	if (!_data) {
-		_data = [[NSMutableData alloc] init];
-	}
-	
 	[_data appendData:data];
 }
 
@@ -146,6 +142,15 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+	if (_data)
+	{
+		[_data setLength:0];
+	}
+	else
+	{
+		_data = [[NSMutableData alloc] init];
+	}
+	
 	NSHTTPURLResponse *resp = (NSHTTPURLResponse *)response;
 	NSInteger code = [resp statusCode];
     
