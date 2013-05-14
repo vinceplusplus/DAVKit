@@ -108,16 +108,14 @@
 
 #if USE_FULL_PATH
 
-    NSURL* url;
     if (_usingMockServer)
     {
-        url = [self URLForPath:path];
+        result = [self URLForPath:path].path;
     }
     else
     {
-        url = self.url;
+        result = [[self.url path] stringByAppendingPathComponent:path];
     }
-    result = [[url path] stringByAppendingPathComponent:path];
 
 #else
         result = path;
