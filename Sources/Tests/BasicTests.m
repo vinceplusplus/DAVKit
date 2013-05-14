@@ -42,6 +42,7 @@
 
 - (NSData*)directoryListingData
 {
+    NSString* rootPath = [self fullPathForPath:@"davkittest"];
     NSString* path1 = [self fullPathForPath:@"davkittest/filetest22.txt"];
     NSString* path2 = [self fullPathForPath:@"davkittest/filetest23.txt"];
     NSString* path3 = [self fullPathForPath:@"davkittest/filetest24.txt"];
@@ -78,7 +79,17 @@
                      "</D:propstat>"
                      "</D:response>"
 
-                     "</D:multistatus>\r\n", path1, path2, path3];
+                     "<D:response xmlns:lp1=\"DAV:\">"
+                     "<D:href>%@</D:href>"
+                     "<D:propstat>"
+                     "<D:prop>"
+                     "<lp1:resourcetype/>"
+                     "</D:prop>"
+                     "<D:status>HTTP/1.1 200 OK</D:status>"
+                     "</D:propstat>"
+                     "</D:response>"
+
+                     "</D:multistatus>\r\n", rootPath, path1, path2, path3];
     
     NSData* data = [xml dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -235,7 +246,7 @@
         [self makeTestDirectory];
 
         DAVListingRequest *req = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
-        self.server.data = [self noDirectoryListingData];
+        self.server.data = [self emptyDirectoryListingData];
         [self queueAndWaitForRequest:req];
 
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
