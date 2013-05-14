@@ -229,9 +229,12 @@
         STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
         STAssertEquals([self.result count], 0UL, @"Unexpected result count %lu %@", [self.result count], self.result);
 
-        [self makeTestFile];
-        [self makeTestFileWithPath:@"davkittest/filetest23.txt"];
-        [self makeTestFileWithPath:@"davkittest/filetest24.txt"];
+        NSString* path1 = @"davkittest/filetest22.txt";
+        NSString* path2 = @"davkittest/filetest23.txt";
+        NSString* path3 = @"davkittest/filetest24.txt";
+        [self makeTestFileWithPath:path1];
+        [self makeTestFileWithPath:path2];
+        [self makeTestFileWithPath:path3];
 
         DAVListingRequest *req2 = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
         req.depth = 1;
@@ -241,7 +244,15 @@
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
         STAssertTrue([self.result isKindOfClass:[NSArray class]], @"Expecting a NSArray object for PROPFIND requests");
         STAssertEquals([self.result count], 3UL, @"Unexpected result count %lu %@", [self.result count], self.result);
-        
+
+        NSUInteger n = 0;
+        NSArray* names = @[path1, path2, path3];
+        for (DAVResponseItem* item in self.result)
+        {
+            NSString* expected = [self fullPathForPath:names[n++]];
+            STAssertTrue([item.href isEqualToString:expected], @"expected %@ got %@", expected, item.href);
+        }
+
         [self removeTestDirectory];
     }
 }
