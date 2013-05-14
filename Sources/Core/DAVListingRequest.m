@@ -43,19 +43,27 @@
 }
 
 - (id)resultForData:(NSData *)data {
-	DAVListingParser *p = [[DAVListingParser alloc] initWithData:data];
-	
-	NSError *error = nil;
-	NSArray *items = [p parse:&error];
-	
-	if (error) {
-		#ifdef DEBUG
+    NSArray *items = nil;
+    if ([data length] > 0) {
+        DAVListingParser *p = [[DAVListingParser alloc] initWithData:data];
+
+        NSError *error = nil;
+        items = [p parse:&error];
+
+        if (error) {
+#ifdef DEBUG
 			NSLog(@"XML Parse error: %@", error);
-		#endif
-	}
-	
-	[p release];
-	
+#endif
+        }
+        
+        [p release];
+    }
+    else {
+#ifdef DEBUG
+        NSLog(@"Got back nil/empty data");
+#endif
+    }
+
 	return items;
 }
 
