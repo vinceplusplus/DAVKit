@@ -6,10 +6,84 @@
 //
 
 #import "BasicTests.h"
+#import "KMSServer.h"
 
 @implementation BasicTests
 
 #pragma mark - Support
+
+
+- (NSData*)noDirectoryListingData
+{
+    NSString* xml = @"<D:multistatus xmlns:D=\"DAV:\"/>";
+    NSData* data = [xml dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return data;
+}
+
+- (NSData*)emptyDirectoryListingData
+{
+    NSString* path = [self fullPathForPath:@"davkittest"];
+    NSString* xml = [NSString stringWithFormat:
+        @"<D:response xmlns:lp1=\"DAV:\">"
+        "<D:href>%@</D:href>"
+        "<D:propstat>"
+        "<D:prop>"
+        "<lp1:resourcetype><D:collection/></lp1:resourcetype>"
+        "</D:prop>"
+        "<D:status>HTTP/1.1 200 OK</D:status>"
+        "</D:propstat>"
+        "</D:response>", path];
+
+    NSData* data = [xml dataUsingEncoding:NSUTF8StringEncoding];
+
+    return data;
+}
+
+- (NSData*)directoryListingData
+{
+    NSString* path1 = [self fullPathForPath:@"davkittest/filetest22.txt"];
+    NSString* path2 = [self fullPathForPath:@"davkittest/filetest23.txt"];
+    NSString* path3 = [self fullPathForPath:@"davkittest/filetest24.txt"];
+    NSString* xml = [NSString stringWithFormat:
+                     @"<D:multistatus xmlns:D=\"DAV:\" xmlns:ns0=\"DAV:\">"
+                     
+                     "<D:response xmlns:lp1=\"DAV:\">"
+                     "<D:href>%@</D:href>"
+                     "<D:propstat>"
+                     "<D:prop>"
+                     "<lp1:resourcetype><D:collection/></lp1:resourcetype>"
+                     "</D:prop>"
+                     "<D:status>HTTP/1.1 200 OK</D:status>"
+                     "</D:propstat>"
+                     "</D:response>"
+
+                     "<D:response xmlns:lp1=\"DAV:\">"
+                     "<D:href>%@</D:href>"
+                     "<D:propstat>"
+                     "<D:prop>"
+                     "<lp1:resourcetype/>"
+                     "</D:prop>"
+                     "<D:status>HTTP/1.1 200 OK</D:status>"
+                     "</D:propstat>"
+                     "</D:response>"
+
+                     "<D:response xmlns:lp1=\"DAV:\">"
+                     "<D:href>%@</D:href>"
+                     "<D:propstat>"
+                     "<D:prop>"
+                     "<lp1:resourcetype/>"
+                     "</D:prop>"
+                     "<D:status>HTTP/1.1 200 OK</D:status>"
+                     "</D:propstat>"
+                     "</D:response>"
+
+                     "</D:multistatus>\r\n", path1, path2, path3];
+    
+    NSData* data = [xml dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return data;
+}
 
 - (void)makeTestDirectory
 {
@@ -28,10 +102,19 @@
     [self makeTestFileWithPath:@"davkittest/filetest22.txt"];
 }
 
+- (NSString*)testText
+{
+    return @"blah";
+}
+
+- (NSData*)testData
+{
+    return [self.testText dataUsingEncoding:NSUTF8StringEncoding];
+}
 - (void)makeTestFileWithPath:(NSString*)path
 {
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:self.url];
-    request.HTTPBody = [@"blah" dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = [self testData];
     NSString* fullPath = [self fullPathForPath:path];
 	DAVPutRequest *req = [[DAVPutRequest alloc] initWithPath:fullPath originalRequest:request session:self.session delegate:self];
     [self queueAndWaitForRequest:req];
@@ -54,6 +137,7 @@
         STAssertNil(self.result, @"unexpected result for MKCOL %@", self.result);
 
         // try to make the directory again - we should get back a 405, which we ignore
+        [self useResponseSet:@"make fails"];
         [self makeTestDirectory];
 
         STAssertTrue(self.error.code == 405, @"unexpected error for MKCOL %@", self.error);
@@ -85,11 +169,12 @@
         [self makeTestFile];
 
         DAVGetRequest *req = [self requestOfClass:[DAVGetRequest class] withPath:@"davkittest/filetest22.txt"];
+        self.server.data = [self testData];
         [self queueAndWaitForRequest:req];
 
         STAssertNil(self.error, @"Unexpected error for GET %@", self.error);
         STAssertTrue([self.result isKindOfClass:[NSData class]], @"Expecting a NSData object for GET requests");
-        STAssertTrue([self.result length] == 4, @"Invalid length (string should be blah)");
+        STAssertTrue([self.result length] == [self.testText length], @"Invalid length (string should be %@)", self.testText);
 
         [self removeTestDirectory];
     }
@@ -137,6 +222,7 @@
         [self makeTestDirectory];
 
         DAVListingRequest *req = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
+        self.server.data = [self noDirectoryListingData];
         [self queueAndWaitForRequest:req];
 
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);
@@ -148,6 +234,8 @@
         [self makeTestFileWithPath:@"davkittest/filetest24.txt"];
 
         DAVListingRequest *req2 = [self requestOfClass:[DAVListingRequest class] withPath:@"davkittest"];
+        req.depth = 1;
+        self.server.data = [self directoryListingData];
         [self queueAndWaitForRequest:req2];
 
         STAssertNil(self.error, @"Unexpected error for PROPFIND %@", self.error);

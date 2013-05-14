@@ -44,6 +44,7 @@
 
 - (id)resultForData:(NSData *)data {
     NSArray *items = nil;
+    NSLog(@"%@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
     if ([data length] > 0) {
         DAVListingParser *p = [[DAVListingParser alloc] initWithData:data];
 

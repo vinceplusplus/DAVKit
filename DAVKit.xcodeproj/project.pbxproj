@@ -67,10 +67,6 @@
 		22AC1BC317426F1C00AB09E1 /* KMSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */; };
 		22AC1BC417426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */; };
 		22AC1BC517426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */; };
-		22AC1BCA17426F1C00AB09E1 /* ftp.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7B17426F1B00AB09E1 /* ftp.json */; };
-		22AC1BCB17426F1C00AB09E1 /* ftp.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7B17426F1B00AB09E1 /* ftp.json */; };
-		22AC1BCC17426F1C00AB09E1 /* http.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7C17426F1B00AB09E1 /* http.json */; };
-		22AC1BCD17426F1C00AB09E1 /* http.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7C17426F1B00AB09E1 /* http.json */; };
 		22AC1BEC17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
 		22AC1BED17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
 		5FEEF26316CE830C002C1CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
@@ -333,6 +329,27 @@
 		22AC1B4E17426F1B00AB09E1 /* MockServer */ = {
 			isa = PBXGroup;
 			children = (
+				22AC1BFB1742808400AB09E1 /* Code */,
+				22AC1B7A17426F1B00AB09E1 /* Responses */,
+			);
+			name = MockServer;
+			path = Tests/MockServer;
+			sourceTree = "<group>";
+		};
+		22AC1B7A17426F1B00AB09E1 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				22AC1B7B17426F1B00AB09E1 /* ftp.json */,
+				22AC1B7C17426F1B00AB09E1 /* http.json */,
+				22AC1B9917426F1C00AB09E1 /* webdav.json */,
+			);
+			name = Responses;
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		22AC1BFB1742808400AB09E1 /* Code */ = {
+			isa = PBXGroup;
+			children = (
 				22AC1B5817426F1B00AB09E1 /* KMSCloseCommand.h */,
 				22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */,
 				22AC1B5A17426F1B00AB09E1 /* KMSCommand.h */,
@@ -362,21 +379,8 @@
 				22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */,
 				22AC1B7317426F1B00AB09E1 /* KMSTranscriptEntry.h */,
 				22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */,
-				22AC1B7A17426F1B00AB09E1 /* Responses */,
 			);
-			name = MockServer;
-			path = Tests/MockServer;
-			sourceTree = "<group>";
-		};
-		22AC1B7A17426F1B00AB09E1 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				22AC1B7B17426F1B00AB09E1 /* ftp.json */,
-				22AC1B7C17426F1B00AB09E1 /* http.json */,
-				22AC1B9917426F1C00AB09E1 /* webdav.json */,
-			);
-			name = Responses;
-			path = UnitTests;
+			name = Code;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -639,8 +643,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC1BCB17426F1C00AB09E1 /* ftp.json in Resources */,
-				22AC1BCD17426F1C00AB09E1 /* http.json in Resources */,
 				22AC1BED17426F1C00AB09E1 /* webdav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,8 +658,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC1BCA17426F1C00AB09E1 /* ftp.json in Resources */,
-				22AC1BCC17426F1C00AB09E1 /* http.json in Resources */,
 				22AC1BEC17426F1C00AB09E1 /* webdav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

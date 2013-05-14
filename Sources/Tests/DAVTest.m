@@ -6,6 +6,7 @@
 //
 
 #import "DAVTest.h"
+#import "KMSServer.h"
 
 @interface DAVTest()
 
@@ -15,7 +16,6 @@
 
 @synthesize session = _session;
 @synthesize url = _url;
-@synthesize host = _host;
 @synthesize queue = _queue;
 @synthesize error = _error;
 @synthesize result = _result;
@@ -33,22 +33,33 @@
     // If the server is set to "Off" though, we suppress the tests. This lets you at least verify that the tests build.
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString* setting = [defaults stringForKey:@"DAVTestURL"];
-    if ([setting isEqualToString:@"MockServer"])
+    if (![setting isEqualToString:@"Off"])
     {
-        _usingMockServer = YES;
-        [self setupServerWithResponseFileNamed:@"webdav"];
-    }
+        BOOL ok;
+        if ([setting isEqualToString:@"MockServer"])
+        {
+            _usingMockServer = YES;
+            ok = [self setupServerWithResponseFileNamed:@"webdav"];
+            [KMSServer setLoggingLevel:KMSLoggingDetail];
+        }
+        else
+        {
+            NSURL* url = [NSURL URLWithString:setting];
+            self.user = url.user;
+            self.password = url.password;
+            self.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", url.scheme, url.host, url.path]];
 
-    else if (![setting isEqualToString:@"Off"])
-    {
-        self.url = [NSURL URLWithString:setting];
-        STAssertNotNil(self.url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/Library/Preferences, so you'll need to edit that one manually.");
+            ok = self.url != nil;
+            STAssertNotNil(self.url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/Library/Preferences, so you'll need to edit that one manually.");
+        }
 
-        _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
-        NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
+        if (ok)
+        {
+            NSLog(@"Testing %@ as %@ %@", self.url, self.user, self.password);
 
-        _session = [[DAVSession alloc] initWithRootURL:_host delegate:self];
-        STAssertNotNil(_session, @"Couldn't create DAV session");
+            _session = [[DAVSession alloc] initWithRootURL:self.url delegate:self];
+            STAssertNotNil(_session, @"Couldn't create DAV session");
+        }
     }
 }
 
@@ -75,13 +86,13 @@
 }
 
 - (void)waitUntilWeAreDone {
+    self.queue.suspended = NO;
     if (_usingMockServer)
     {
         [self runUntilPaused];
     }
     else
     {
-        self.queue.suspended = NO;
         while (!_done) {
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
         }
@@ -104,7 +115,7 @@
     }
     else
     {
-        url = self.host;
+        url = self.url;
     }
     result = [[url path] stringByAppendingPathComponent:path];
 
@@ -171,12 +182,12 @@
     }
     else
     {
-        NSURLCredential *credentials = [NSURLCredential credentialWithUser:self.url.user
-                                                                  password:self.url.password
+        NSURLCredential *credentials = [NSURLCredential credentialWithUser:self.user
+                                                                  password:self.password
                                                                persistence:NSURLCredentialPersistenceNone];
         STAssertNotNil(credentials, @"Couldn't create credentials");
-        STAssertTrue([self.url.user isEqualToString:credentials.user], @"Couldn't set username");
-        STAssertTrue([self.url.password isEqualToString:credentials.password], @"Couldn't set password");
+        STAssertTrue([self.user isEqualToString:credentials.user], @"Couldn't set username");
+        STAssertTrue([self.password isEqualToString:credentials.password], @"Couldn't set password");
         
         [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
     }
