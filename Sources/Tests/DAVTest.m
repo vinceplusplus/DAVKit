@@ -33,10 +33,16 @@
     // If the server is set to "Off" though, we suppress the tests. This lets you at least verify that the tests build.
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString* setting = [defaults stringForKey:@"DAVTestURL"];
-    if (![setting isEqualToString:@"Off"])
+    if ([setting isEqualToString:@"MockServer"])
     {
-        _url = [[NSURL URLWithString:setting] retain];
-        STAssertNotNil(_url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/Library/Preferences, so you'll need to edit that one manually.");
+        _usingMockServer = YES;
+        [self setupServerWithResponseFileNamed:@"webdav"];
+    }
+
+    else if (![setting isEqualToString:@"Off"])
+    {
+        self.url = [NSURL URLWithString:setting];
+        STAssertNotNil(self.url, @"You need to set a test server address. Use the defaults command on the command line: defaults write otest DAVTestURL \"server-url-here\".\n\nNote that the iOS tests read from the otest.plist in ~/Library/Application Support/iPhone Simulator/Library/Preferences, so you'll need to edit that one manually.");
 
         _host = [[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@", self.url.scheme, self.url.host, self.url.path]] retain];
         NSLog(@"Testing %@ as %@ %@", _host, self.url.user, self.url.password);
@@ -48,30 +54,64 @@
 
 - (BOOL)isEnabled
 {
-    return self.session != nil;
+    BOOL enabled = self.session != nil;
+    if (!enabled)
+    {
+        NSLog(@"WARNING: Test %@ is disabled.", self.name);
+    }
+
+    return enabled;
 }
 
 - (void)notifyDone {
-	_done = YES;
+    if (_usingMockServer)
+    {
+        [self pause];
+    }
+    else
+    {
+        _done = YES;
+    }
 }
 
 - (void)waitUntilWeAreDone {
-    self.queue.suspended = NO;
-	while (!_done) {
-		[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-	}
+    if (_usingMockServer)
+    {
+        [self runUntilPaused];
+    }
+    else
+    {
+        self.queue.suspended = NO;
+        while (!_done) {
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        }
+    }
 }
 
 #define USE_FULL_PATH 1
 
 - (NSString*)fullPathForPath:(NSString*)path
 {
+    NSString* result;
+
+
 #if USE_FULL_PATH
-    NSString* result = [[self.host path] stringByAppendingPathComponent:path];
+
+    NSURL* url;
+    if (_usingMockServer)
+    {
+        url = [self URLForPath:path];
+    }
+    else
+    {
+        url = self.host;
+    }
+    result = [[url path] stringByAppendingPathComponent:path];
+
 #else
-    NSString* result = path;
+        result = path;
 #endif
-    
+
     return result;
 }
 
