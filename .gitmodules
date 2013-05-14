@@ -4,3 +4,6 @@
 [submodule "Tests/OCUnit2JUnit"]
 	path = Tests/OCUnit2JUnit
 	url = https://github.com/ciryon/OCUnit2JUnit
+[submodule "Tests/MockServer"]
+	path = Tests/MockServer
+	url = git@github.com:karelia/MockServer.git

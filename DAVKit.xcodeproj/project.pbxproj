@@ -39,6 +39,40 @@
 		221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		221F8BB317259F16004E7B9D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F8BB217259F16004E7B9D /* SenTestingKit.framework */; };
 		221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */; };
+		22AC1BAA17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */; };
+		22AC1BAB17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */; };
+		22AC1BAC17426F1C00AB09E1 /* KMSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5B17426F1B00AB09E1 /* KMSCommand.m */; };
+		22AC1BAD17426F1C00AB09E1 /* KMSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5B17426F1B00AB09E1 /* KMSCommand.m */; };
+		22AC1BAE17426F1C00AB09E1 /* KMSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5D17426F1B00AB09E1 /* KMSConnection.m */; };
+		22AC1BAF17426F1C00AB09E1 /* KMSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5D17426F1B00AB09E1 /* KMSConnection.m */; };
+		22AC1BB017426F1C00AB09E1 /* KMSListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5F17426F1B00AB09E1 /* KMSListener.m */; };
+		22AC1BB117426F1C00AB09E1 /* KMSListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5F17426F1B00AB09E1 /* KMSListener.m */; };
+		22AC1BB217426F1C00AB09E1 /* KMSPauseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6117426F1B00AB09E1 /* KMSPauseCommand.m */; };
+		22AC1BB317426F1C00AB09E1 /* KMSPauseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6117426F1B00AB09E1 /* KMSPauseCommand.m */; };
+		22AC1BB417426F1C00AB09E1 /* KMSRegExResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6317426F1B00AB09E1 /* KMSRegExResponder.m */; };
+		22AC1BB517426F1C00AB09E1 /* KMSRegExResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6317426F1B00AB09E1 /* KMSRegExResponder.m */; };
+		22AC1BB617426F1C00AB09E1 /* KMSResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6517426F1B00AB09E1 /* KMSResponder.m */; };
+		22AC1BB717426F1C00AB09E1 /* KMSResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6517426F1B00AB09E1 /* KMSResponder.m */; };
+		22AC1BB817426F1C00AB09E1 /* KMSResponseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6717426F1B00AB09E1 /* KMSResponseCollection.m */; };
+		22AC1BB917426F1C00AB09E1 /* KMSResponseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6717426F1B00AB09E1 /* KMSResponseCollection.m */; };
+		22AC1BBA17426F1C00AB09E1 /* KMSSendDataCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6917426F1B00AB09E1 /* KMSSendDataCommand.m */; };
+		22AC1BBB17426F1C00AB09E1 /* KMSSendDataCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6917426F1B00AB09E1 /* KMSSendDataCommand.m */; };
+		22AC1BBC17426F1C00AB09E1 /* KMSSendServerDataCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6B17426F1B00AB09E1 /* KMSSendServerDataCommand.m */; };
+		22AC1BBD17426F1C00AB09E1 /* KMSSendServerDataCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6B17426F1B00AB09E1 /* KMSSendServerDataCommand.m */; };
+		22AC1BBE17426F1C00AB09E1 /* KMSSendStringCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6D17426F1B00AB09E1 /* KMSSendStringCommand.m */; };
+		22AC1BBF17426F1C00AB09E1 /* KMSSendStringCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6D17426F1B00AB09E1 /* KMSSendStringCommand.m */; };
+		22AC1BC017426F1C00AB09E1 /* KMSServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6F17426F1B00AB09E1 /* KMSServer.m */; };
+		22AC1BC117426F1C00AB09E1 /* KMSServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B6F17426F1B00AB09E1 /* KMSServer.m */; };
+		22AC1BC217426F1C00AB09E1 /* KMSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */; };
+		22AC1BC317426F1C00AB09E1 /* KMSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */; };
+		22AC1BC417426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */; };
+		22AC1BC517426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */; };
+		22AC1BCA17426F1C00AB09E1 /* ftp.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7B17426F1B00AB09E1 /* ftp.json */; };
+		22AC1BCB17426F1C00AB09E1 /* ftp.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7B17426F1B00AB09E1 /* ftp.json */; };
+		22AC1BCC17426F1C00AB09E1 /* http.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7C17426F1B00AB09E1 /* http.json */; };
+		22AC1BCD17426F1C00AB09E1 /* http.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B7C17426F1B00AB09E1 /* http.json */; };
+		22AC1BEC17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
+		22AC1BED17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
 		5FEEF26316CE830C002C1CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		5FEEF26F16CE840F002C1CBF /* DAVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED591121D989900DD1DFF /* DAVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEEF27016CE8426002C1CBF /* NSDateRFC1123.h in Headers */ = {isa = PBXBuildFile; fileRef = F94970EB132A093600713958 /* NSDateRFC1123.h */; };
@@ -120,6 +154,38 @@
 		221D56C11726A60C00527AD9 /* DAVRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequests.h; path = Sources/Core/DAVRequests.h; sourceTree = "<group>"; };
 		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F8BB217259F16004E7B9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
+		22AC1B5817426F1B00AB09E1 /* KMSCloseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCloseCommand.h; sourceTree = "<group>"; };
+		22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSCloseCommand.m; sourceTree = "<group>"; };
+		22AC1B5A17426F1B00AB09E1 /* KMSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCommand.h; sourceTree = "<group>"; };
+		22AC1B5B17426F1B00AB09E1 /* KMSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSCommand.m; sourceTree = "<group>"; };
+		22AC1B5C17426F1B00AB09E1 /* KMSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSConnection.h; sourceTree = "<group>"; };
+		22AC1B5D17426F1B00AB09E1 /* KMSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSConnection.m; sourceTree = "<group>"; };
+		22AC1B5E17426F1B00AB09E1 /* KMSListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSListener.h; sourceTree = "<group>"; };
+		22AC1B5F17426F1B00AB09E1 /* KMSListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSListener.m; sourceTree = "<group>"; };
+		22AC1B6017426F1B00AB09E1 /* KMSPauseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSPauseCommand.h; sourceTree = "<group>"; };
+		22AC1B6117426F1B00AB09E1 /* KMSPauseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSPauseCommand.m; sourceTree = "<group>"; };
+		22AC1B6217426F1B00AB09E1 /* KMSRegExResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSRegExResponder.h; sourceTree = "<group>"; };
+		22AC1B6317426F1B00AB09E1 /* KMSRegExResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSRegExResponder.m; sourceTree = "<group>"; };
+		22AC1B6417426F1B00AB09E1 /* KMSResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSResponder.h; sourceTree = "<group>"; };
+		22AC1B6517426F1B00AB09E1 /* KMSResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSResponder.m; sourceTree = "<group>"; };
+		22AC1B6617426F1B00AB09E1 /* KMSResponseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSResponseCollection.h; sourceTree = "<group>"; };
+		22AC1B6717426F1B00AB09E1 /* KMSResponseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSResponseCollection.m; sourceTree = "<group>"; };
+		22AC1B6817426F1B00AB09E1 /* KMSSendDataCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSSendDataCommand.h; sourceTree = "<group>"; };
+		22AC1B6917426F1B00AB09E1 /* KMSSendDataCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSSendDataCommand.m; sourceTree = "<group>"; };
+		22AC1B6A17426F1B00AB09E1 /* KMSSendServerDataCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSSendServerDataCommand.h; sourceTree = "<group>"; };
+		22AC1B6B17426F1B00AB09E1 /* KMSSendServerDataCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSSendServerDataCommand.m; sourceTree = "<group>"; };
+		22AC1B6C17426F1B00AB09E1 /* KMSSendStringCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSSendStringCommand.h; sourceTree = "<group>"; };
+		22AC1B6D17426F1B00AB09E1 /* KMSSendStringCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSSendStringCommand.m; sourceTree = "<group>"; };
+		22AC1B6E17426F1B00AB09E1 /* KMSServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSServer.h; sourceTree = "<group>"; };
+		22AC1B6F17426F1B00AB09E1 /* KMSServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSServer.m; sourceTree = "<group>"; };
+		22AC1B7017426F1B00AB09E1 /* KMSState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSState.h; sourceTree = "<group>"; };
+		22AC1B7117426F1B00AB09E1 /* KMSTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSTestCase.h; sourceTree = "<group>"; };
+		22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSTestCase.m; sourceTree = "<group>"; };
+		22AC1B7317426F1B00AB09E1 /* KMSTranscriptEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSTranscriptEntry.h; sourceTree = "<group>"; };
+		22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSTranscriptEntry.m; sourceTree = "<group>"; };
+		22AC1B7B17426F1B00AB09E1 /* ftp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ftp.json; sourceTree = "<group>"; };
+		22AC1B7C17426F1B00AB09E1 /* http.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = http.json; sourceTree = "<group>"; };
+		22AC1B9917426F1C00AB09E1 /* webdav.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = webdav.json; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* DAVKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVKit_Prefix.pch; sourceTree = "<group>"; };
 		5FEEF26016CE830C002C1CBF /* libDAVKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDAVKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEEF26216CE830C002C1CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,6 +330,55 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		22AC1B4E17426F1B00AB09E1 /* MockServer */ = {
+			isa = PBXGroup;
+			children = (
+				22AC1B5817426F1B00AB09E1 /* KMSCloseCommand.h */,
+				22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */,
+				22AC1B5A17426F1B00AB09E1 /* KMSCommand.h */,
+				22AC1B5B17426F1B00AB09E1 /* KMSCommand.m */,
+				22AC1B5C17426F1B00AB09E1 /* KMSConnection.h */,
+				22AC1B5D17426F1B00AB09E1 /* KMSConnection.m */,
+				22AC1B5E17426F1B00AB09E1 /* KMSListener.h */,
+				22AC1B5F17426F1B00AB09E1 /* KMSListener.m */,
+				22AC1B6017426F1B00AB09E1 /* KMSPauseCommand.h */,
+				22AC1B6117426F1B00AB09E1 /* KMSPauseCommand.m */,
+				22AC1B6217426F1B00AB09E1 /* KMSRegExResponder.h */,
+				22AC1B6317426F1B00AB09E1 /* KMSRegExResponder.m */,
+				22AC1B6417426F1B00AB09E1 /* KMSResponder.h */,
+				22AC1B6517426F1B00AB09E1 /* KMSResponder.m */,
+				22AC1B6617426F1B00AB09E1 /* KMSResponseCollection.h */,
+				22AC1B6717426F1B00AB09E1 /* KMSResponseCollection.m */,
+				22AC1B6817426F1B00AB09E1 /* KMSSendDataCommand.h */,
+				22AC1B6917426F1B00AB09E1 /* KMSSendDataCommand.m */,
+				22AC1B6A17426F1B00AB09E1 /* KMSSendServerDataCommand.h */,
+				22AC1B6B17426F1B00AB09E1 /* KMSSendServerDataCommand.m */,
+				22AC1B6C17426F1B00AB09E1 /* KMSSendStringCommand.h */,
+				22AC1B6D17426F1B00AB09E1 /* KMSSendStringCommand.m */,
+				22AC1B6E17426F1B00AB09E1 /* KMSServer.h */,
+				22AC1B6F17426F1B00AB09E1 /* KMSServer.m */,
+				22AC1B7017426F1B00AB09E1 /* KMSState.h */,
+				22AC1B7117426F1B00AB09E1 /* KMSTestCase.h */,
+				22AC1B7217426F1B00AB09E1 /* KMSTestCase.m */,
+				22AC1B7317426F1B00AB09E1 /* KMSTranscriptEntry.h */,
+				22AC1B7417426F1B00AB09E1 /* KMSTranscriptEntry.m */,
+				22AC1B7A17426F1B00AB09E1 /* Responses */,
+			);
+			name = MockServer;
+			path = Tests/MockServer;
+			sourceTree = "<group>";
+		};
+		22AC1B7A17426F1B00AB09E1 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				22AC1B7B17426F1B00AB09E1 /* ftp.json */,
+				22AC1B7C17426F1B00AB09E1 /* http.json */,
+				22AC1B9917426F1C00AB09E1 /* webdav.json */,
+			);
+			name = Responses;
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +458,7 @@
 				C9FED5B2121D98D600DD1DFF /* BasicTests.m */,
 				C9FED5B7121D98D600DD1DFF /* DAVTest.h */,
 				C9FED5B8121D98D600DD1DFF /* DAVTest.m */,
+				22AC1B4E17426F1B00AB09E1 /* MockServer */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -503,6 +619,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* DAVKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -522,6 +639,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AC1BCB17426F1C00AB09E1 /* ftp.json in Resources */,
+				22AC1BCD17426F1C00AB09E1 /* http.json in Resources */,
+				22AC1BED17426F1C00AB09E1 /* webdav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +656,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AC1BCA17426F1C00AB09E1 /* ftp.json in Resources */,
+				22AC1BCC17426F1C00AB09E1 /* http.json in Resources */,
+				22AC1BEC17426F1C00AB09E1 /* webdav.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +702,20 @@
 			files = (
 				221F8B9A17259BFF004E7B9D /* BasicTests.m in Sources */,
 				221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */,
+				22AC1BAB17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */,
+				22AC1BAD17426F1C00AB09E1 /* KMSCommand.m in Sources */,
+				22AC1BAF17426F1C00AB09E1 /* KMSConnection.m in Sources */,
+				22AC1BB117426F1C00AB09E1 /* KMSListener.m in Sources */,
+				22AC1BB317426F1C00AB09E1 /* KMSPauseCommand.m in Sources */,
+				22AC1BB517426F1C00AB09E1 /* KMSRegExResponder.m in Sources */,
+				22AC1BB717426F1C00AB09E1 /* KMSResponder.m in Sources */,
+				22AC1BB917426F1C00AB09E1 /* KMSResponseCollection.m in Sources */,
+				22AC1BBB17426F1C00AB09E1 /* KMSSendDataCommand.m in Sources */,
+				22AC1BBD17426F1C00AB09E1 /* KMSSendServerDataCommand.m in Sources */,
+				22AC1BBF17426F1C00AB09E1 /* KMSSendStringCommand.m in Sources */,
+				22AC1BC117426F1C00AB09E1 /* KMSServer.m in Sources */,
+				22AC1BC317426F1C00AB09E1 /* KMSTestCase.m in Sources */,
+				22AC1BC517426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +769,20 @@
 			files = (
 				C9FED5C1121D98D600DD1DFF /* BasicTests.m in Sources */,
 				C9FED5C4121D98D600DD1DFF /* DAVTest.m in Sources */,
+				22AC1BAA17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */,
+				22AC1BAC17426F1C00AB09E1 /* KMSCommand.m in Sources */,
+				22AC1BAE17426F1C00AB09E1 /* KMSConnection.m in Sources */,
+				22AC1BB017426F1C00AB09E1 /* KMSListener.m in Sources */,
+				22AC1BB217426F1C00AB09E1 /* KMSPauseCommand.m in Sources */,
+				22AC1BB417426F1C00AB09E1 /* KMSRegExResponder.m in Sources */,
+				22AC1BB617426F1C00AB09E1 /* KMSResponder.m in Sources */,
+				22AC1BB817426F1C00AB09E1 /* KMSResponseCollection.m in Sources */,
+				22AC1BBA17426F1C00AB09E1 /* KMSSendDataCommand.m in Sources */,
+				22AC1BBC17426F1C00AB09E1 /* KMSSendServerDataCommand.m in Sources */,
+				22AC1BBE17426F1C00AB09E1 /* KMSSendStringCommand.m in Sources */,
+				22AC1BC017426F1C00AB09E1 /* KMSServer.m in Sources */,
+				22AC1BC217426F1C00AB09E1 /* KMSTestCase.m in Sources */,
+				22AC1BC417426F1C00AB09E1 /* KMSTranscriptEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
