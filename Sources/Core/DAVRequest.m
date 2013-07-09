@@ -79,7 +79,9 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 }
 
 - (void)start {
-	if (![NSThread isMainThread]) {
+	if (![NSURLConnection instancesRespondToSelector:@selector(setDelegateQueue:)] &&
+        ![NSThread isMainThread])
+    {
 		[self performSelectorOnMainThread:@selector(start) 
 							   withObject:nil waitUntilDone:NO];
 		
@@ -89,8 +91,27 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 	[self willChangeValueForKey:@"isExecuting"];
 	
 	_executing = YES;
-	_connection = [[NSURLConnection connectionWithRequest:[self request]
-												 delegate:self] retain];
+	_connection = [[NSURLConnection alloc] initWithRequest:[self request]
+                                                  delegate:self
+                                          startImmediately:NO];
+    
+    if ([_connection respondsToSelector:@selector(setDelegateQueue:)])
+    {
+        static NSOperationQueue *delegateQueue;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            delegateQueue = [[NSOperationQueue alloc] init];
+            delegateQueue.maxConcurrentOperationCount = 1;
+        });
+        
+        [_connection setDelegateQueue:delegateQueue];
+    }
+    else
+    {
+        [_connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    
+    [_connection start];
 	
 	if ([_delegate respondsToSelector:@selector(requestDidBegin:)])
 		[_delegate requestDidBegin:self];
