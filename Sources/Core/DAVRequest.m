@@ -45,7 +45,15 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 	
     if ([aPath isAbsolutePath])
     {
-        return [NSURL URLWithString:aPath relativeToURL:self.session.rootURL];
+        CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                      (CFStringRef)aPath,
+                                                                      NULL,
+                                                                      CFSTR(";?#"), // otherwise e.g. ? character would be misinterpreted as query
+                                                                      kCFStringEncodingUTF8);
+        
+        NSURL *result = [NSURL URLWithString:(NSString *)escaped relativeToURL:self.session.rootURL];
+        CFRelease(escaped);
+        return result;
     }
     
 #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
