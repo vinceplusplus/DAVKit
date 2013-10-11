@@ -160,6 +160,15 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
+    // Log the challenge's response object
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)challenge.failureResponse;
+    if ([response isKindOfClass:[NSHTTPURLResponse class]])
+    {
+        NSInteger code = response.statusCode;
+        [[self session] appendFormatToReceivedTranscript:@"%i %@", code, [[response class] localizedStringForStatusCode:code]];
+    }
+	
+    
     id <DAVSessionDelegate> delegate = [self.session valueForKey:@"delegate"];
     if ([delegate respondsToSelector:@selector(webDAVSession:didReceiveAuthenticationChallenge:)])
     {
