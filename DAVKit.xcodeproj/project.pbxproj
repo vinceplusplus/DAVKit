@@ -935,7 +935,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DAVKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DAVKit;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
@@ -958,7 +960,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DAVKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DAVKit;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
