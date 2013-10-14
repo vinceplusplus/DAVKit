@@ -150,7 +150,6 @@
 		221D56BB1726A51400527AD9 /* DAVMoveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVMoveRequest.m; path = Sources/Core/DAVMoveRequest.m; sourceTree = "<group>"; };
 		221D56C11726A60C00527AD9 /* DAVRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequests.h; path = Sources/Core/DAVRequests.h; sourceTree = "<group>"; };
 		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		221F8BB217259F16004E7B9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
 		22AC1B5817426F1B00AB09E1 /* KMSCloseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCloseCommand.h; sourceTree = "<group>"; };
 		22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSCloseCommand.m; sourceTree = "<group>"; };
 		22AC1B5A17426F1B00AB09E1 /* KMSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCommand.h; sourceTree = "<group>"; };
@@ -253,8 +252,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C90CEA7180C636F00C89B3A /* XCTest.framework in Frameworks */,
 				C9FF7821121C7224001250C7 /* DAVKit.framework in Frameworks */,
+				3C90CEA7180C636F00C89B3A /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				3CFC0D84180C634800B16437 /* XCTest.framework */,
-				221F8BB217259F16004E7B9D /* SenTestingKit.framework */,
 				5FEEF26216CE830C002C1CBF /* Foundation.framework */,
 				5FEEF28816CE869C002C1CBF /* iOS */,
 				5FEEF28716CE8696002C1CBF /* OSX */,
