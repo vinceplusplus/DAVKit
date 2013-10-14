@@ -37,7 +37,6 @@
 		221F8B9D17259BFF004E7B9D /* DAVTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED5B8121D98D600DD1DFF /* DAVTest.m */; };
 		221F8BAC17259C79004E7B9D /* libDAVKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26016CE830C002C1CBF /* libDAVKit.a */; };
 		221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
-		221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */; };
 		22AC1BAA17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */; };
 		22AC1BAB17426F1C00AB09E1 /* KMSCloseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */; };
 		22AC1BAC17426F1C00AB09E1 /* KMSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1B5B17426F1B00AB09E1 /* KMSCommand.m */; };
@@ -69,6 +68,8 @@
 		22AC1BEC17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
 		22AC1BED17426F1C00AB09E1 /* webdav.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AC1B9917426F1C00AB09E1 /* webdav.json */; };
 		3C90CEA7180C636F00C89B3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFC0D84180C634800B16437 /* XCTest.framework */; };
+		3C90CEA9180C687A00C89B3A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C90CEA8180C687A00C89B3A /* MobileCoreServices.framework */; };
+		3C90CEAA180C689100C89B3A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C90CEA8180C687A00C89B3A /* MobileCoreServices.framework */; };
 		3CFC0D85180C634800B16437 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFC0D84180C634800B16437 /* XCTest.framework */; };
 		5FEEF26316CE830C002C1CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
 		5FEEF26F16CE840F002C1CBF /* DAVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED591121D989900DD1DFF /* DAVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,7 +92,6 @@
 		5FEEF28016CE8461002C1CBF /* DAVSession.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FED599121D989900DD1DFF /* DAVSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEEF28116CE8461002C1CBF /* DAVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FED59A121D989900DD1DFF /* DAVSession.m */; };
 		5FEEF28216CE854C002C1CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF26216CE830C002C1CBF /* Foundation.framework */; };
-		5FEEF28416CE8598002C1CBF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28316CE8596002C1CBF /* MobileCoreServices.framework */; };
 		5FEEF28616CE868B002C1CBF /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEF28516CE868A002C1CBF /* CoreServices.framework */; };
 		C9181BBC121DC31D0022E4AC /* DAVResponseItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C9181BBA121DC31D0022E4AC /* DAVResponseItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9181BBD121DC31D0022E4AC /* DAVResponseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9181BBB121DC31D0022E4AC /* DAVResponseItem.m */; };
@@ -183,6 +183,7 @@
 		22AC1B7C17426F1B00AB09E1 /* http.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = http.json; sourceTree = "<group>"; };
 		22AC1B9917426F1C00AB09E1 /* webdav.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = webdav.json; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* DAVKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVKit_Prefix.pch; sourceTree = "<group>"; };
+		3C90CEA8180C687A00C89B3A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		3CFC0D84180C634800B16437 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5FEEF26016CE830C002C1CBF /* libDAVKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDAVKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEEF26216CE830C002C1CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -223,8 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C90CEA9180C687A00C89B3A /* MobileCoreServices.framework in Frameworks */,
 				3CFC0D85180C634800B16437 /* XCTest.framework in Frameworks */,
-				221F8BB417259F60004E7B9D /* MobileCoreServices.framework in Frameworks */,
 				221F8BAC17259C79004E7B9D /* libDAVKit.a in Frameworks */,
 				221F8BAF17259DD7004E7B9D /* Foundation.framework in Frameworks */,
 			);
@@ -234,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FEEF28416CE8598002C1CBF /* MobileCoreServices.framework in Frameworks */,
+				3C90CEAA180C689100C89B3A /* MobileCoreServices.framework in Frameworks */,
 				5FEEF26316CE830C002C1CBF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +397,7 @@
 		5FEEF26116CE830C002C1CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C90CEA8180C687A00C89B3A /* MobileCoreServices.framework */,
 				3CFC0D84180C634800B16437 /* XCTest.framework */,
 				5FEEF26216CE830C002C1CBF /* Foundation.framework */,
 				5FEEF28816CE869C002C1CBF /* iOS */,
