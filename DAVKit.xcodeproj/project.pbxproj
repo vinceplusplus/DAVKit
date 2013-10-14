@@ -149,7 +149,7 @@
 		221D56BA1726A51400527AD9 /* DAVMoveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVMoveRequest.h; path = Sources/Core/DAVMoveRequest.h; sourceTree = "<group>"; };
 		221D56BB1726A51400527AD9 /* DAVMoveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAVMoveRequest.m; path = Sources/Core/DAVMoveRequest.m; sourceTree = "<group>"; };
 		221D56C11726A60C00527AD9 /* DAVRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAVRequests.h; path = Sources/Core/DAVRequests.h; sourceTree = "<group>"; };
-		221F8BA817259BFF004E7B9D /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		221F8BA817259BFF004E7B9D /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC1B5817426F1B00AB09E1 /* KMSCloseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCloseCommand.h; sourceTree = "<group>"; };
 		22AC1B5917426F1B00AB09E1 /* KMSCloseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSCloseCommand.m; sourceTree = "<group>"; };
 		22AC1B5A17426F1B00AB09E1 /* KMSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSCommand.h; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 				8DC2EF5B0486A6940098B216 /* DAVKit.framework */,
 				C9FF77EC121C6F51001250C7 /* Tests.xctest */,
 				5FEEF26016CE830C002C1CBF /* libDAVKit.a */,
-				221F8BA817259BFF004E7B9D /* Tests iOS.octest */,
+				221F8BA817259BFF004E7B9D /* Tests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 			);
 			name = "Tests iOS";
 			productName = Tests;
-			productReference = 221F8BA817259BFF004E7B9D /* Tests iOS.octest */;
+			productReference = 221F8BA817259BFF004E7B9D /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		5FEEF25F16CE830C002C1CBF /* DAVKit iOS */ = {
@@ -890,7 +890,7 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -910,7 +910,7 @@
 				PRODUCT_NAME = "Tests iOS";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
