@@ -21,6 +21,10 @@
 @synthesize result = _result;
 
 - (void)setUp {
+    
+    // Use MockServer out of the box
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"DAVTestURL" : @"MockServer" }];
+    
 	_done = NO;
 
     _queue = [[NSOperationQueue alloc] init];
