@@ -23,7 +23,7 @@
 - (void)setUp {
     
     // Use MockServer out of the box
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"DAVTestURL" : @"Off" }];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"DAVTestURL" : @"MockServer" }];
     
 	_done = NO;
 
