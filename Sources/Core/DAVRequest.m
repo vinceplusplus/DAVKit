@@ -182,9 +182,10 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
 	
 	NSHTTPURLResponse *resp = (NSHTTPURLResponse *)response;
 	NSInteger code = [resp statusCode];
+    NSString *description = [resp.class localizedStringForStatusCode:code];
     
     // Report to transcript
-    [[self session] appendFormatToReceivedTranscript:@"%i %@", code, [[resp class] localizedStringForStatusCode:code]];
+    [self.session appendFormatToReceivedTranscript:@"%i %@", code, description];
 	
 	if ((code >= 400) || (self.expectedStatuses && ![self.expectedStatuses containsIndex:code])) {
 		[_connection cancel];
@@ -192,7 +193,8 @@ NSString *const DAVClientErrorDomain = @"com.MattRajca.DAVKit.error";
         // TODO: Formalize inclusion of response
 		NSError *error = [NSError errorWithDomain:DAVClientErrorDomain
 											 code:code
-										 userInfo:[NSDictionary dictionaryWithObject:response forKey:@"response"]];
+										 userInfo:@{ NSLocalizedFailureReasonErrorKey : description,
+                                                     @"response" : response }];
 		
 		[self _didFail:error];
 	}
