@@ -200,7 +200,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	}
 }
 
-#if defined MAC_OS_X_VERSION_MAX_ALLOWED && MAC_OS_X_VERSION_10_6 >= MAC_OS_X_VERSION_MAX_ALLOWED
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
 	BOOL result = [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodDefault] ||
 	[protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic] ||
@@ -209,7 +208,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	
 	return result;
 }
-#endif
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
@@ -229,7 +227,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
         return;
     }
     
-#if defined MAC_OS_X_VERSION_MAX_ALLOWED && MAC_OS_X_VERSION_10_6 >= MAC_OS_X_VERSION_MAX_ALLOWED
 	if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
     {
 		if (self.session.allowUntrustedCertificate)
@@ -239,7 +236,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 		[challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 	}
     else
-#endif
     {
 		if ([challenge previousFailureCount] == 0) {
 			[[challenge sender] useCredential:[challenge proposedCredential] forAuthenticationChallenge:challenge];
