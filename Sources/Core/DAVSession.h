@@ -15,12 +15,14 @@
   @private
 	NSURL *_rootURL;
 	BOOL _allowUntrustedCertificate;
+    BOOL _send100ContinueRequests;
     
     id <DAVSessionDelegate> _delegate;
 }
 
 @property (readonly) NSURL *rootURL;
 @property (assign) BOOL allowUntrustedCertificate;
+@property (nonatomic) BOOL send100ContinueRequests;
 
 /*
  The root URL should include a scheme and host, followed by any root paths

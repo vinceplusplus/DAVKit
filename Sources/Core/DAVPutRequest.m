@@ -8,6 +8,9 @@
 #import "DAVPutRequest.h"
 #import "DAVRequest+Private.h"
 
+#import "DAVSession.h"
+
+
 @implementation DAVPutRequest
 
 + (NSString*)MIMETypeForExtension:(NSString*)extension
@@ -47,7 +50,7 @@
 
         NSString* MIMEType = [DAVPutRequest MIMETypeForExtension:[path pathExtension]];
         [_request setValue:MIMEType forHTTPHeaderField:@"Content-Type"];
-        [_request setValue:@"100-Continue" forHTTPHeaderField:@"Expect"];
+        if (session.send100ContinueRequests) [_request setValue:@"100-Continue" forHTTPHeaderField:@"Expect"];
 
         [_request setHTTPMethod:@"PUT"];
         [_request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];

@@ -14,6 +14,7 @@
 
 @synthesize rootURL = _rootURL;
 @synthesize allowUntrustedCertificate = _allowUntrustedCertificate;
+@synthesize send100ContinueRequests = _send100ContinueRequests;
 
 - (id)initWithRootURL:(NSURL *)url delegate:(id <DAVSessionDelegate>)delegate;
 {
