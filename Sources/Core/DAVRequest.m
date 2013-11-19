@@ -155,6 +155,12 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
     {
         redirectString = @"";
     }
+    
+    // Let delegate have a say too
+    if ([self.delegate respondsToSelector:@selector(request:willSendRequest:redirectResponse:)])
+    {
+        request = [self.delegate request:self willSendRequest:request redirectResponse:redirectResponse];
+    }
 
     [[self session] appendFormatToSentTranscript:@"%@ %@%@", [request HTTPMethod], [[request URL] path], redirectString];     // TODO: Include HTTP version
 

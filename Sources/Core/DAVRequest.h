@@ -52,4 +52,6 @@ extern NSString *const DAVClientErrorDomain;
 
 - (void)requestDidBegin:(DAVRequest *)aRequest;
 
+- (NSURLRequest *)request:(DAVRequest *)aRequest willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse;
+
 @end
