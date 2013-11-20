@@ -206,6 +206,12 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	}
 }
 
+- (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection;
+{
+    // Insist we receive all auth challenges so can include them in the transcript
+    return NO;
+}
+
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
 	BOOL result = [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodDefault] ||
 	[protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic] ||
