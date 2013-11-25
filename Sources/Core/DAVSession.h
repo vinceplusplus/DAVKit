@@ -23,6 +23,7 @@
 @property (readonly) NSURL *rootURL;
 @property (assign) BOOL allowUntrustedCertificate;
 @property (nonatomic) BOOL send100ContinueRequests;
+@property (nonatomic, readonly, assign) id <DAVSessionDelegate> delegate;
 
 /*
  The root URL should include a scheme and host, followed by any root paths

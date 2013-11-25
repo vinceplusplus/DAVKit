@@ -232,7 +232,7 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
     }
 	
     
-    id <DAVSessionDelegate> delegate = [self.session valueForKey:@"delegate"];
+    id <DAVSessionDelegate> delegate = self.session.delegate;
     if ([delegate respondsToSelector:@selector(webDAVSession:didReceiveAuthenticationChallenge:)])
     {
         [delegate webDAVSession:self.session didReceiveAuthenticationChallenge:challenge];
@@ -260,7 +260,7 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 {
-    id <DAVSessionDelegate> delegate = [self.session valueForKey:@"delegate"];
+    id <DAVSessionDelegate> delegate = self.session.delegate;
     if ([delegate respondsToSelector:@selector(webDAVSession:didCancelAuthenticationChallenge:)])
     {
         [delegate webDAVSession:self.session didCancelAuthenticationChallenge:challenge];
