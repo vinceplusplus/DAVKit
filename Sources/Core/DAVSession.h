@@ -45,8 +45,7 @@
 @protocol DAVSessionDelegate <NSObject>
 @optional
 
-- (void)webDAVSession:(DAVSession *)session didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-- (void)webDAVSession:(DAVSession *)session didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)webDAVSession:(DAVSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSInteger disposition, NSURLCredential *credential))completionHandler;
 
 // The sent argument indicates whether the data was sent or received
 - (void)webDAVSession:(DAVSession *)session appendStringToTranscript:(NSString *)string sent:(BOOL)sent;

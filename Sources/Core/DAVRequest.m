@@ -233,9 +233,32 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	
     
     id <DAVSessionDelegate> delegate = self.session.delegate;
-    if ([delegate respondsToSelector:@selector(webDAVSession:didReceiveAuthenticationChallenge:)])
+    if ([delegate respondsToSelector:@selector(webDAVSession:didReceiveChallenge:completionHandler:)])
     {
-        [delegate webDAVSession:self.session didReceiveAuthenticationChallenge:challenge];
+        [delegate webDAVSession:self.session didReceiveChallenge:challenge completionHandler:^(NSInteger disposition, NSURLCredential *credential) {
+            
+            switch (disposition)
+            {
+                case 1: // NSURLSessionAuthChallengePerformDefaultHandling
+                    if ([challenge.sender respondsToSelector:@selector(performDefaultHandlingForAuthenticationChallenge:)])
+                    {
+                        [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+                        break;
+                    }
+                    else
+                    {
+                        credential = challenge.proposedCredential;
+                    }
+                    
+                case 0: // NSURLSessionAuthChallengeUseCredential
+                    [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+                    break;
+                    
+                default:
+                    [challenge.sender cancelAuthenticationChallenge:challenge];
+                    break;
+            }
+        }];
         return;
     }
     
@@ -256,15 +279,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 			[[challenge sender] cancelAuthenticationChallenge:challenge];
 		}
 	}
-}
-
-- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-    id <DAVSessionDelegate> delegate = self.session.delegate;
-    if ([delegate respondsToSelector:@selector(webDAVSession:didCancelAuthenticationChallenge:)])
-    {
-        [delegate webDAVSession:self.session didCancelAuthenticationChallenge:challenge];
-    }
 }
 
 - (void)_didFail:(NSError *)error {
