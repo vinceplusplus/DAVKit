@@ -140,6 +140,16 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	return nil;
 }
 
+- (void)appendResponseToTranscript:(NSURLResponse *)response;
+{
+    if ([response isKindOfClass:[NSHTTPURLResponse class]])
+    {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSInteger code = httpResponse.statusCode;
+        [self.session appendFormatToReceivedTranscript:@"%i %@", code, [response.class localizedStringForStatusCode:code]];
+    }
+}
+
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse;
 {
     NSString* redirectString;
@@ -202,7 +212,7 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
     }
     
     // Report to transcript
-    [self.session appendFormatToReceivedTranscript:@"%i %@", code, description];
+    [self appendResponseToTranscript:response];
 	
 	if ((code >= 400) || (self.expectedStatuses && ![self.expectedStatuses containsIndex:code])) {
 		[_connection cancel];
@@ -235,12 +245,8 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
     // Log the challenge's response object
-    NSHTTPURLResponse *response = (NSHTTPURLResponse *)challenge.failureResponse;
-    if ([response isKindOfClass:[NSHTTPURLResponse class]])
-    {
-        NSInteger code = response.statusCode;
-        [[self session] appendFormatToReceivedTranscript:@"%i %@", code, [[response class] localizedStringForStatusCode:code]];
-    }
+    NSURLResponse *response = challenge.failureResponse;
+    [self appendResponseToTranscript:response];
 	
     
     id <DAVSessionDelegate> delegate = self.session.delegate;
