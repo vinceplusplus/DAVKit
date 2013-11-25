@@ -262,6 +262,13 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
                 case 0: // NSURLSessionAuthChallengeUseCredential
                     [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
                     
+                    // Add to transcript
+                    if (response)
+                    {
+                        NSURLRequest *request = self.request;
+                        [self.session appendFormatToSentTranscript:@"%@ %@", request.HTTPMethod, request.URL.path];
+                    }
+                    
                     // Because of our -connectionShouldUseCredentialStorage: implementation,
                     // the URL Loading System won't respect the credential's persistence,
                     // which leaves it up to us to handle once the connection is successful
