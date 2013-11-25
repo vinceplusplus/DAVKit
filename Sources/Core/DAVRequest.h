@@ -16,6 +16,7 @@ extern NSString *const DAVClientErrorDomain;
   @private
 	NSString *_path;
 	NSURLConnection *_connection;
+    NSMutableDictionary *_pendingCredentials;
 	NSMutableData *_data;
 	BOOL _done;
 	BOOL _executing;

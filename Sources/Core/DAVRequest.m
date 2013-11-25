@@ -32,6 +32,7 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	if (self) {
 		_path = [aPath copy];
         _delegate = [delegate retain];  // retained till finish running/cancelled
+        _pendingCredentials = [[NSMutableDictionary alloc] init];
 	}
 	return self;
 }
@@ -190,6 +191,16 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 	NSInteger code = [resp statusCode];
     NSString *description = [resp.class localizedStringForStatusCode:code];
     
+    // Store any pending credentials
+    if (code != 401)
+    {
+        [_pendingCredentials enumerateKeysAndObjectsUsingBlock:^(NSURLProtectionSpace *aSpace, NSURLCredential *aCredential, BOOL *stop) {
+            [[NSURLCredentialStorage sharedCredentialStorage] setCredential:aCredential forProtectionSpace:aSpace];
+        }];
+        
+        [_pendingCredentials removeAllObjects];
+    }
+    
     // Report to transcript
     [self.session appendFormatToReceivedTranscript:@"%i %@", code, description];
 	
@@ -240,18 +251,15 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
             switch (disposition)
             {
                 case 1: // NSURLSessionAuthChallengePerformDefaultHandling
-                    if ([challenge.sender respondsToSelector:@selector(performDefaultHandlingForAuthenticationChallenge:)])
-                    {
-                        [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
-                        break;
-                    }
-                    else
-                    {
-                        credential = challenge.proposedCredential;
-                    }
+                    credential = challenge.proposedCredential;
                     
                 case 0: // NSURLSessionAuthChallengeUseCredential
                     [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+                    
+                    // Because of our -connectionShouldUseCredentialStorage: implementation,
+                    // the URL Loading System won't respect the credential's persistence,
+                    // which leaves it up to us to handle once the connection is successful
+                    if (credential) [_pendingCredentials setObject:credential forKey:challenge.protectionSpace];
                     break;
                     
                 default:
@@ -315,6 +323,7 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 - (void)dealloc {
 	[_path release];
 	[_connection release];
+    [_pendingCredentials release];
 	[_data release];
     [_expectedStatuses release];
 	
