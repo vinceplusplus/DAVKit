@@ -57,6 +57,7 @@
         [_request setURL:[self concatenatedURLWithPath:path]];
 
         NSMutableIndexSet* indexes = [[NSMutableIndexSet alloc] init];
+        [indexes addIndex:200]; // Microsoft-IIS/6.0 returns this when overwriting an existing file
         [indexes addIndex:201]; // The resource was created successfully
         [indexes addIndex:202]; // The resource will be created or deleted, but this has not happened yet
         [indexes addIndex:204]; // The server has fulfilled the request but does not need to return an entity body, and might return updated metadata.
