@@ -15,7 +15,9 @@
 {
     if ((self = [super initWithPath:aPath session:session delegate:delegate]) != nil)
     {
-        self.expectedStatuses = [NSIndexSet indexSetWithIndex:204];
+        NSMutableIndexSet *statuses = [NSMutableIndexSet indexSetWithIndex:204];
+        [statuses addIndex:200];    // Have found Microsoft servers return this after a successful deletion https://karelia.fogbugz.com/f/cases/252461
+        self.expectedStatuses = statuses;
     }
 
     return self;
