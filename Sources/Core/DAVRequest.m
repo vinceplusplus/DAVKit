@@ -43,9 +43,18 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
 
 - (NSURL *)concatenatedURLWithPath:(NSString *)aPath {
 	NSParameterAssert(aPath != nil);
+    
+    // According to the WebDAV spec http://www.webdav.org/specs/rfc4918.html#url-handling (as best I understand it)
+    // resource "href"s received from servers should be ready to be resolved by NSURL as-is,
+    // relative to the server URL.
+    // Previously we had code here which distinguished between relative and absolute paths, and
+    // handled them differently
+    // In both cases, we're going to some trouble to escape any odd characters in the ref
+    // I _think_ that's unecessary for things received from the server, but don't have any hard data
+    // on the subject, sorry
+    // Plus, it seems we use this method for some request URL generation. Perhaps the two should be
+    // handled separately. I don't know. Going with this one fairly generic implementation for now.
 	
-    if ([aPath isAbsolutePath])
-    {
         CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                       (CFStringRef)aPath,
                                                                       NULL,
@@ -55,17 +64,6 @@ NSString *const DAVClientErrorDomain = @"org.w3.http";
         NSURL *result = [NSURL URLWithString:(NSString *)escaped relativeToURL:self.session.rootURL];
         CFRelease(escaped);
         return result;
-    }
-    
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
-	return [self.session.rootURL URLByAppendingPathComponent:aPath];
-#else
-    CFURLRef result = CFURLCreateCopyAppendingPathComponent(NULL,
-                                                             (CFURLRef)[self.session.rootURL absoluteURL],
-                                                             (CFStringRef)aPath,
-                                                             NO);
-    return [NSMakeCollectable(result) autorelease];
-#endif
 }
 
 - (BOOL)isConcurrent {
