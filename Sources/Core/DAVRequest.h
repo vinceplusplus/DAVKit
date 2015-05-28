@@ -24,11 +24,14 @@ extern NSString *const DAVClientErrorDomain;
     id <DAVRequestDelegate> _delegate;
 }
 
+/**
+ Delegate is held onto until the request finishes
+ */
 - (id)initWithPath:(NSString *)aPath session:(DAVSession *)session delegate:(id <DAVRequestDelegate>)delegate;
 
 @property(readonly) NSString *path;
 @property(nonatomic, strong) NSIndexSet* expectedStatuses;
-@property(nonatomic, assign, readonly) id <DAVRequestDelegate> delegate;
+@property(nonatomic, strong, readonly) id <DAVRequestDelegate> delegate;
 
 - (NSURL *)concatenatedURLWithPath:(NSString *)aPath;
 
